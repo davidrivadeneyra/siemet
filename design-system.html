@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Fundamentos visuales y componentes base de SIEMET." />
+    <title>Sistema visual | SIEMET</title>
+    <link rel="icon" href="assets/brand/logo-siemet-blue.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <script src="scripts/main.js" type="module"></script>
+    <style>
+      .styleguide { padding-block: var(--space-10); }
+      .styleguide__header { display: grid; gap: var(--space-8); margin-bottom: var(--space-12); }
+      .styleguide__logo { width: min(22.875rem, 100%); height: auto; }
+      .styleguide__section { display: grid; gap: var(--space-6); padding-block: var(--space-8); border-top: 1px solid var(--color-gray-200); }
+      .styleguide__row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-4); }
+      .styleguide__swatches { display: grid; grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); gap: var(--space-4); }
+      .swatch { min-height: 8rem; display: flex; align-items: end; padding: var(--space-4); border: 1px solid var(--color-gray-200); background: var(--swatch); color: var(--swatch-text, var(--color-dark-800)); }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Saltar al contenido</a>
+    <main class="styleguide container" id="main-content">
+      <header class="styleguide__header">
+        <img class="styleguide__logo" src="assets/brand/logo-siemet-blue.svg" alt="SIEMET" width="366" height="58" />
+        <div>
+          <p class="eyebrow"><span class="eyebrow__marker" aria-hidden="true"></span>Sistema visual</p>
+          <h1 class="heading heading--regular">Fundamentos y componentes</h1>
+        </div>
+        <p class="text-body">Esta página es una referencia técnica. No corresponde al diseño del home.</p>
+      </header>
+
+      <section class="styleguide__section" aria-labelledby="colors-title">
+        <h2 class="heading heading--small" id="colors-title">Colores</h2>
+        <div class="styleguide__swatches">
+          <div class="swatch" style="--swatch: var(--color-blue-600); --swatch-text: white">Blue 600 · #1E3388</div>
+          <div class="swatch" style="--swatch: var(--color-blue-800); --swatch-text: white">Blue 800 · #1D2B5A</div>
+          <div class="swatch" style="--swatch: var(--color-accent); --swatch-text: white">Accent · #E07A5F</div>
+          <div class="swatch" style="--swatch: var(--color-gray-100)">Gray 100 · #EFF5FA</div>
+          <div class="swatch" style="--swatch: var(--color-gray-200)">Gray 200 · #E2ECF4</div>
+          <div class="swatch" style="--swatch: var(--color-dark-800); --swatch-text: white">Dark 800 · #1B1D21</div>
+        </div>
+      </section>
+
+      <section class="styleguide__section" aria-labelledby="type-title">
+        <h2 class="heading heading--small" id="type-title">Tipografía</h2>
+        <p class="heading heading--big">Título grande</p>
+        <p class="heading heading--regular">Título regular</p>
+        <p class="heading heading--medium">Título mediano</p>
+        <p class="heading heading--small">Título pequeño</p>
+        <p class="text-body">Texto descriptivo regular para contenido continuo y mensajes de apoyo.</p>
+        <p class="text-mono">Etiqueta mono</p>
+      </section>
+
+      <section class="styleguide__section" aria-labelledby="components-title">
+        <h2 class="heading heading--small" id="components-title">Componentes</h2>
+        <p class="eyebrow"><span class="eyebrow__marker" aria-hidden="true"></span>Quiénes somos</p>
+        <div class="styleguide__row">
+          <a class="button button--primary" href="#">Botón primario</a>
+          <a class="button button--secondary" href="#">Botón secundario</a>
+          <button class="icon-button" type="button" aria-label="Añadir">
+            <svg aria-hidden="true" viewBox="0 0 20 20" width="20" height="20"><path d="M10 4v12M4 10h12" /></svg>
+          </button>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

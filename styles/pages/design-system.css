@@ -1,0 +1,44 @@
+.styleguide {
+  padding-block: var(--space-10);
+}
+
+.styleguide__header {
+  display: grid;
+  gap: var(--space-8);
+  margin-bottom: var(--space-12);
+}
+
+.styleguide__logo {
+  width: min(22.875rem, 100%);
+  height: auto;
+}
+
+.styleguide__section {
+  display: grid;
+  gap: var(--space-6);
+  padding-block: var(--space-8);
+  border-top: 1px solid var(--color-gray-200);
+}
+
+.styleguide__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.styleguide__swatches {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: var(--space-4);
+}
+
+.swatch {
+  min-height: 8rem;
+  display: flex;
+  align-items: end;
+  padding: var(--space-4);
+  border: 1px solid var(--color-gray-200);
+  background: var(--swatch);
+  color: var(--swatch-text, var(--color-title));
+}

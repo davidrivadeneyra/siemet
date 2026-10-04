@@ -1,0 +1,84 @@
+body {
+  background: var(--color-white);
+  color: var(--color-title);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-description-regular);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-description);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-blue-600-bright);
+  color: var(--color-white);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-blue-400);
+  outline-offset: 3px;
+}
+
+.heading,
+.description-mega {
+  margin: 0;
+  font-family: var(--font-sans);
+  line-height: var(--line-height-tight);
+  text-wrap: balance;
+}
+
+.heading {
+  color: var(--color-title);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--letter-spacing-title);
+}
+
+.heading--big { font-size: var(--font-size-title-big); }
+.heading--regular { font-size: var(--font-size-title-regular); }
+.heading--medium { font-size: var(--font-size-title-medium); }
+.heading--small { font-size: var(--font-size-title-small); }
+
+.description-mega {
+  color: var(--color-title);
+  font-size: var(--font-size-description-mega);
+  font-weight: var(--font-weight-regular);
+  letter-spacing: var(--letter-spacing-description-mega);
+}
+
+.text-body {
+  color: var(--color-title);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-description-regular);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-description);
+  letter-spacing: 0;
+}
+
+.text-mono,
+.text-mono-medium {
+  color: var(--color-blue-800);
+  font-family: var(--font-mono);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.text-mono {
+  font-size: var(--font-size-mono-regular);
+  line-height: normal;
+}
+
+.text-mono-medium {
+  font-size: var(--font-size-mono-medium);
+  line-height: var(--line-height-mono-medium);
+}
+
+@media (max-width: 47.99rem) {
+  .heading--big { font-size: clamp(3rem, 14vw, var(--font-size-title-big)); }
+  .heading--regular { font-size: clamp(2.25rem, 10vw, var(--font-size-title-regular)); }
+  .description-mega { font-size: clamp(3.5rem, 18vw, var(--font-size-description-mega)); }
+}
+
+@view-transition {
+  navigation: auto;
+}
