@@ -4,6 +4,7 @@ import { initFaq } from "./faq.js";
 import { initGallery } from "./gallery.js";
 import { initHeroSlideshow } from "./hero-slideshow.js";
 import { initIndustries } from "./industries.js";
+import { initPageTransition } from "./page-transition.js";
 import { initProcess } from "./process.js";
 import { initProducts } from "./products.js";
 import { initProjectCard } from "./projects.js";
@@ -13,6 +14,7 @@ import { initTrajectory } from "./trajectory.js";
 
 document.documentElement.classList.add("js");
 renderSharedComponents();
+initPageTransition();
 const smoothScroll = initSmoothScroll();
 
 document.querySelectorAll('[data-slideshow="wrap"]').forEach(initHeroSlideshow);

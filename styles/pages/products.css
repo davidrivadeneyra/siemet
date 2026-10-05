@@ -220,10 +220,70 @@
   display: flex;
 }
 
+.product-modal.is-opening {
+  animation: product-modal-enter 360ms ease-in both;
+}
+
+.product-modal.is-closing {
+  animation: product-modal-exit 320ms ease-out both;
+}
+
 .product-modal::backdrop {
   background: rgb(29 43 90 / 40%);
   -webkit-backdrop-filter: blur(0.5rem);
   backdrop-filter: blur(0.5rem);
+}
+
+.product-modal.is-opening::backdrop {
+  animation: product-modal-backdrop-enter 360ms ease-in both;
+}
+
+.product-modal.is-closing::backdrop {
+  animation: product-modal-backdrop-exit 320ms ease-out both;
+}
+
+@keyframes product-modal-enter {
+  from {
+    opacity: 0;
+    transform: translateX(3rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes product-modal-exit {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateX(3rem);
+  }
+}
+
+@keyframes product-modal-backdrop-enter {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes product-modal-backdrop-exit {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
 }
 
 .product-modal__header,
@@ -384,6 +444,13 @@ html.has-product-modal {
 @media (prefers-reduced-motion: reduce) {
   .product-card__image {
     transition: none;
+  }
+
+  .product-modal.is-opening,
+  .product-modal.is-closing,
+  .product-modal.is-opening::backdrop,
+  .product-modal.is-closing::backdrop {
+    animation: none;
   }
 
   .product-card.is-clickable:hover .product-card__image {

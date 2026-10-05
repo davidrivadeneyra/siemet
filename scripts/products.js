@@ -1,6 +1,8 @@
 import { scrambleText } from "./scramble-text.js";
 
 const HOVER_QUERY = "(hover: hover) and (pointer: fine)";
+const REDUCED_MOTION_QUERY = "(prefers-reduced-motion: reduce)";
+const MODAL_EXIT_DURATION = 320;
 
 export function initProducts(root) {
   const categoryTabs = [...root.querySelectorAll("[data-products-category]")];
@@ -68,6 +70,7 @@ export function initProducts(root) {
   const modalFamily = modal.querySelector("[data-product-modal-family]");
   const modalTitle = modal.querySelector("[data-product-modal-title]");
   const modalDescription = modal.querySelector("[data-product-modal-description]");
+  const modalMain = modal.querySelector(".product-modal__main");
   const modalCurrent = modal.querySelector("[data-product-modal-current]");
   const modalTotal = modal.querySelector("[data-product-modal-total]");
   const closeButton = modal.querySelector("[data-product-modal-close]");
@@ -88,6 +91,8 @@ export function initProducts(root) {
   const totalLabel = String(products.length).padStart(2, "0");
   let currentProductIndex = 0;
   let lastTrigger;
+  let isChangingProduct = false;
+  let closeTimer;
 
   const renderProduct = (index) => {
     currentProductIndex = (index + products.length) % products.length;
@@ -109,17 +114,78 @@ export function initProducts(root) {
     lastTrigger = trigger;
     renderProduct(index);
     document.documentElement.classList.add("has-product-modal");
+    modal.classList.remove("is-closing");
+    modal.classList.add("is-opening");
     if (typeof modal.showModal === "function") modal.showModal();
     else modal.setAttribute("open", "");
   };
 
-  const closeModal = () => {
+  const finishClosingModal = () => {
+    window.clearTimeout(closeTimer);
+    modal.classList.remove("is-opening", "is-closing");
     if (typeof modal.close === "function") modal.close();
     else {
       modal.removeAttribute("open");
       document.documentElement.classList.remove("has-product-modal");
       lastTrigger?.focus({ preventScroll: true });
     }
+  };
+
+  const closeModal = () => {
+    if (!modal.open || modal.classList.contains("is-closing")) return;
+    modal.classList.remove("is-opening");
+
+    if (window.matchMedia(REDUCED_MOTION_QUERY).matches) {
+      finishClosingModal();
+      return;
+    }
+
+    modal.classList.add("is-closing");
+    closeTimer = window.setTimeout(finishClosingModal, MODAL_EXIT_DURATION + 80);
+  };
+
+  const animateProductChange = async (index, direction) => {
+    if (isChangingProduct) return;
+
+    const animationTargets = [modalImage, modalMain].filter(Boolean);
+    if (
+      window.matchMedia(REDUCED_MOTION_QUERY).matches ||
+      !animationTargets.length ||
+      animationTargets.some((target) => typeof target.animate !== "function")
+    ) {
+      renderProduct(index);
+      return;
+    }
+
+    isChangingProduct = true;
+    const exitOffset = direction > 0 ? "-1.5rem" : "1.5rem";
+    const enterOffset = direction > 0 ? "1.5rem" : "-1.5rem";
+    const exitAnimations = animationTargets.map((target) =>
+      target.animate(
+        [
+          { opacity: 1, transform: "translateX(0)" },
+          { opacity: 0, transform: `translateX(${exitOffset})` },
+        ],
+        { duration: 180, easing: "ease-in", fill: "forwards" },
+      ),
+    );
+
+    await Promise.all(exitAnimations.map((animation) => animation.finished.catch(() => undefined)));
+    renderProduct(index);
+
+    const enterAnimations = animationTargets.map((target) =>
+      target.animate(
+        [
+          { opacity: 0, transform: `translateX(${enterOffset})` },
+          { opacity: 1, transform: "translateX(0)" },
+        ],
+        { duration: 240, easing: "ease-out", fill: "forwards" },
+      ),
+    );
+
+    await Promise.all(enterAnimations.map((animation) => animation.finished.catch(() => undefined)));
+    [...exitAnimations, ...enterAnimations].forEach((animation) => animation.cancel());
+    isChangingProduct = false;
   };
 
   productCards.forEach((card, index) => {
@@ -145,8 +211,18 @@ export function initProducts(root) {
   });
 
   closeButton?.addEventListener("click", closeModal);
-  previousButton?.addEventListener("click", () => renderProduct(currentProductIndex - 1));
-  nextButton?.addEventListener("click", () => renderProduct(currentProductIndex + 1));
+  previousButton?.addEventListener("click", () => animateProductChange(currentProductIndex - 1, -1));
+  nextButton?.addEventListener("click", () => animateProductChange(currentProductIndex + 1, 1));
+
+  modal.addEventListener("animationend", (event) => {
+    if (event.animationName === "product-modal-enter") modal.classList.remove("is-opening");
+    if (event.animationName === "product-modal-exit") finishClosingModal();
+  });
+
+  modal.addEventListener("cancel", (event) => {
+    event.preventDefault();
+    closeModal();
+  });
 
   modal.addEventListener("click", (event) => {
     if (event.target !== modal) return;
@@ -164,11 +240,11 @@ export function initProducts(root) {
     if (!modal.open || event.altKey || event.ctrlKey || event.metaKey) return;
     if (event.key === "ArrowLeft") {
       event.preventDefault();
-      renderProduct(currentProductIndex - 1);
+      animateProductChange(currentProductIndex - 1, -1);
     }
     if (event.key === "ArrowRight") {
       event.preventDefault();
-      renderProduct(currentProductIndex + 1);
+      animateProductChange(currentProductIndex + 1, 1);
     }
   });
 }

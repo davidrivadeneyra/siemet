@@ -9,9 +9,7 @@ const navigationItems = [
   ["nosotros", "Nosotros", "/nosotros/"],
   ["soluciones", "Soluciones", "/soluciones/"],
   ["productos", "Productos", "/productos/"],
-  ["recursos", "Recursos", "/recursos/"],
   ["proyectos", "Proyectos", "/proyectos/"],
-  ["blog", "Blog", "/blog/"],
 ];
 
 const createNavigationLinks = (activePage) =>
@@ -154,7 +152,6 @@ const createFooter = () => `
             <a href="/recursos/">Recursos</a>
             <a href="/proyectos/">Proyectos</a>
             <a href="/blog/">Blog</a>
-            <a href="#contacto">Contacto</a>
           </div>
         </nav>
 

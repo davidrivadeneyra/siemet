@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="es">
   <head>
+    <script src="/scripts/page-transition-boot.js"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Fundamentos visuales y componentes base de SIEMET." />
@@ -173,13 +174,14 @@
         <p class="text-mono">Hero de servicio · conserva el patrón flexible y añade descripción de 18px y CTA blanco; el patrón crece con la altura total del contenido</p>
         <p class="text-mono">Tarjeta de solución · imagen cuadrada · separación vertical 24px · título 32px · descripción 17px/150% · botón Geist Mono 15px con padding 10px × 14px · grilla desktop de tres columnas con gap 24px</p>
         <p class="text-mono">Catálogo de productos · encabezado dinámico · tabs transparentes de 15px con padding 10px × 14px, gap 8px y borde inferior Blue 600 de 3px en el estado activo · el filtro Postes/Torres se muestra sólo para Acero estructural · tarjetas completas clickeables con scramble únicamente en “Ver producto” · imagen cuadrada con zoom y desplazamiento sutil al hover · categoría, título 32px, descripción 17px y enlace con flecha Lucide · grilla desktop de cuatro columnas</p>
-        <p class="text-mono">Modal de producto · panel lateral derecho de 760px · overlay Blue 800 al 40% con blur de 8px · superficie Gray 200 · radio 24px · padding y separación de 40px · navegación circular entre todas las familias</p>
+        <p class="text-mono">Modal de producto · panel lateral derecho de 760px · overlay Blue 800 al 40% con blur de 8px · superficie Gray 200 · radio 24px · padding y separación de 40px · entrada lateral ease-in y salida ease-out · transición horizontal de imagen y contenido al navegar · navegación circular entre todas las familias · movimiento desactivado con prefers-reduced-motion</p>
         <p class="text-mono">Proyectos · sección Gray 200 con padding vertical de 137px · proyecto destacado con imagen de 53% y panel Blue 800 superpuesto · métricas con borde White al 20% · tarjetas fotográficas de 453 × 613px en tres columnas y panel inferior negro al 80% · toda la tarjeta es clickeable y su hover aplica scramble únicamente al CTA</p>
         <p class="text-mono">Detalle de proyecto · hero de 100vh con ficha técnica inferior en cuatro columnas · sección Gray 200 con padding vertical de 137px · galería asimétrica de dos columnas para dos o tres imágenes y bloque final Blue 800 con CTA</p>
         <p class="text-mono">Header · barra flotante de 65px con margen superior de 24px · fondo translúcido y blur de 12px · navegación Geist Mono de 15px · variante blanca sobre fondos oscuros y variante Blue 600 con logo azul sobre White, Gray 200 y Gray 300</p>
         <p class="text-mono">Detalle de servicio · fondo Gray 100 · padding vertical 137px · dos columnas con gap 24px · texto e imagen adaptable · grupos de beneficios con separación de 40px</p>
+        <p class="text-mono">Transición de página · panel rectangular Blue 600 · título de destino completo en Geist Medium, sin separar letras ni palabras · escala fluida de 40px a 112px · entrada y salida vertical · desactivada con prefers-reduced-motion</p>
         <p class="text-mono">FAQ y footer · componentes compartidos renderizados en Home y Nosotros · una sola fuente de contenido y estructura</p>
-        <p class="text-mono">Menú principal · posición fixed y sin fondo añadido durante el scroll · sobre White, Gray 100 y Gray 200 usa logo blue, textos Blue 600 y contenedor Gray 200 sólido · sobre fondos blue usa logo y textos blancos, contenedor Blue 800 y CTA White con texto Blue 600 · en hero y otros fondos oscuros conserva el contenedor negro 15% · logo independiente + grupo de navegación · radio 10px · gap 16px · padding 2px 2px 2px 14px · mobile: íconos Lucide Menu/X de 32px</p>
+        <p class="text-mono">Menú principal · posición fixed y sin fondo añadido durante el scroll · sobre White, Gray 100 y Gray 200 usa logo blue, textos Blue 600 y contenedor Gray 200 sólido · sobre fondos blue usa logo y textos blancos, contenedor Blue 800 y CTA White con texto Blue 600 · en hero y otros fondos oscuros conserva el contenedor negro 15% · logo independiente + grupo de navegación · enlace de la página actual subrayado · radio 10px · gap 24px · padding 2px 2px 2px 14px · mobile: íconos Lucide Menu/X de 32px</p>
         <div class="styleguide__code-snippet">
           <p class="text-mono">Snippet reutilizable · Scramble text</p>
           <pre><code>import { scrambleText } from "./scripts/scramble-text.js";

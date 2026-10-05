@@ -67,7 +67,7 @@ body {
 .site-header__menu {
   display: flex;
   align-items: center;
-  gap: var(--space-4);
+  gap: var(--space-5);
 }
 
 .site-nav {
@@ -84,6 +84,13 @@ body {
 .site-nav a,
 .mobile-menu a {
   text-decoration: none;
+}
+
+.site-nav a[aria-current="page"],
+.mobile-menu a[aria-current="page"] {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.3em;
 }
 
 .site-nav a {
