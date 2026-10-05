@@ -13,6 +13,9 @@ Crear una web corporativa para SIEMET completamente personalizada. La primera ve
 - El frontend se estructurará desde el inicio para facilitar su posterior integración con WordPress.
 - Se evitarán dependencias innecesarias y frameworks de frontend.
 - Las páginas compartirán componentes, estilos y comportamientos reutilizables.
+- Todos los íconos de interfaz utilizarán Lucide Icons. No se dibujarán íconos personalizados ni se mezclarán otras bibliotecas, salvo una excepción aprobada explícitamente.
+- La tipografía se utilizará siempre en estilo normal; no se usarán cursivas en ningún componente o contenido.
+- Todo cambio de tamaños, colores o configuración tipográfica deberá actualizarse también en `design-system.html`, dentro de Fundamentos y componentes.
 - Se podrán incorporar View Transitions como mejora progresiva entre páginas.
 
 ## Páginas principales
@@ -151,6 +154,19 @@ En WordPress, el cliente podrá crear nuevos proyectos y sectores. Los listados 
 - Las plantillas mantendrán la consistencia visual y responsive del sitio.
 - Los componentes del prototipo vanilla servirán como base para las plantillas dinámicas.
 - La estructura de URLs se preparará para enlaces permanentes legibles.
+
+### Contenido administrable del Home
+
+Al convertir el frontend en un tema de WordPress, el cliente podrá editar desde el CMS el contenido de las siguientes secciones del Home, sin modificar las plantillas ni el código:
+
+- **Hero:** imagen o video, título, subtítulo, descripción, texto del botón y enlace del botón.
+- **Quiénes somos:** descripción y una lista administrable de elementos, cada uno con título, descripción e imagen.
+- **Proceso:** título, descripción e imagen de cada paso.
+- **Industrias:** título e imagen de cada industria.
+- **Clientes:** logotipo y nombre de cada cliente.
+- **Preguntas frecuentes:** pregunta y respuesta de cada elemento.
+
+La estructura visual, los componentes, el comportamiento responsive y las animaciones permanecerán definidos en el tema. WordPress administrará únicamente el contenido y el orden de los elementos correspondientes.
 
 ## View Transitions
 

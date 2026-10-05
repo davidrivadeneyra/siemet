@@ -9,55 +9,86 @@
     />
     <title>SIEMET | Ingeniería y soluciones metálicas</title>
     <link rel="icon" href="assets/ico/ico-siemet.ico" sizes="any" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.2.3/dist/lenis.css" />
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/pages/home.css" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.2.3/dist/lenis.min.js"></script>
     <script src="scripts/main.js" type="module"></script>
   </head>
   <body>
     <a class="skip-link" href="#main-content">Saltar al contenido</a>
-
     <header class="site-header">
       <a class="site-header__brand" href="/" aria-label="SIEMET, inicio">
-        <img src="assets/brand/logo-siemet-white.svg" alt="SIEMET" />
+        <img class="site-header__logo site-header__logo--white" src="assets/brand/logo-siemet-white.svg" alt="SIEMET" />
+        <img class="site-header__logo site-header__logo--blue" src="assets/brand/logo-siemet-blue.svg" alt="" aria-hidden="true" />
       </a>
 
-      <nav class="site-nav" aria-label="Navegación principal">
-        <a href="/nosotros/">Nosotros</a>
-        <a href="/soluciones/">Soluciones</a>
-        <a href="/productos/">Productos</a>
-        <a href="/recursos/">Recursos</a>
-        <a href="/proyectos/">Proyectos</a>
-        <a href="/contacto/">Contacto</a>
-        <a href="/blog/">Blog</a>
-      </nav>
+      <div class="site-header__menu">
+        <nav class="site-nav" aria-label="Navegación principal">
+          <a href="/nosotros/">Nosotros</a>
+          <a href="/soluciones/">Soluciones</a>
+          <a href="/productos/">Productos</a>
+          <a href="/recursos/">Recursos</a>
+          <a href="/proyectos/">Proyectos</a>
+          <a href="#contacto">Contacto</a>
+          <a href="/blog/">Blog</a>
+        </nav>
 
-      <a class="button button--bright site-header__cta" href="/contacto/">Cotiza un proyecto</a>
+        <a class="button button--primary site-header__cta" href="https://wa.me/51942676263?text=Hola%2C%20quiero%20cotizar%20un%20proyecto%20con%20SIEMET." target="_blank" rel="noopener noreferrer">Cotiza un proyecto</a>
+      </div>
 
       <details class="mobile-menu">
-        <summary aria-label="Abrir menú"><span></span><span></span></summary>
+        <summary aria-label="Abrir menú">
+          <svg class="lucide lucide-menu mobile-menu__open" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 12h16M4 6h16M4 18h16" />
+          </svg>
+          <svg class="lucide lucide-x mobile-menu__close" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M18 6 6 18M6 6l12 12" />
+          </svg>
+        </summary>
         <nav aria-label="Navegación móvil">
           <a href="/nosotros/">Nosotros</a>
           <a href="/soluciones/">Soluciones</a>
           <a href="/productos/">Productos</a>
           <a href="/recursos/">Recursos</a>
           <a href="/proyectos/">Proyectos</a>
-          <a href="/contacto/">Contacto</a>
+          <a href="#contacto">Contacto</a>
           <a href="/blog/">Blog</a>
         </nav>
       </details>
     </header>
 
     <main id="main-content">
-      <section class="hero" aria-labelledby="hero-title" data-slideshow="wrap">
+      <section class="hero" aria-label="Soluciones destacadas" data-header-theme="dark" data-slideshow="wrap">
         <div class="hero__slides" aria-hidden="true">
           <figure class="hero-slide is-current" data-slideshow="slide">
-            <img src="assets/images/home/hero-postes.png" alt="" fetchpriority="high" data-slideshow="parallax" />
+            <video
+              muted
+              loop
+              playsinline
+              preload="auto"
+              poster="assets/images/home/hero-postes.png"
+              data-slideshow="parallax"
+            >
+              <source src="assets/videos/home/postes-metalicos.mp4" type="video/mp4" />
+            </video>
           </figure>
           <figure class="hero-slide" data-slideshow="slide">
             <img src="assets/images/home/feature-02.png" alt="" data-slideshow="parallax" />
           </figure>
           <figure class="hero-slide" data-slideshow="slide">
-            <img src="assets/images/home/feature-03.png" alt="" data-slideshow="parallax" />
+            <video
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              poster="assets/images/home/feature-03.png"
+              data-slideshow="parallax"
+            >
+              <source src="assets/videos/home/torres.mp4" type="video/mp4" />
+            </video>
           </figure>
           <figure class="hero-slide" data-slideshow="slide">
             <img src="assets/images/home/feature-04.png" alt="" data-slideshow="parallax" />
@@ -66,25 +97,88 @@
         <div class="hero__veil" aria-hidden="true"></div>
 
         <div class="hero__content">
-          <h1 class="heading heading--big" id="hero-title">Postes metálicos</h1>
-          <p class="text-body">
-            Hechos a medida y con presencia arquitectónica. Diseñamos y fabricamos postes metálicos que combinan
-            funcionalidad, resistencia y estética, adaptándose a proyectos urbanos, industriales y energéticos
-            que requieren una solución sólida, personalizada y visualmente ordenada.
-          </p>
-          <a class="button button--bright" href="/productos/postes/">Ver postes</a>
-          <div class="hero__progress" aria-hidden="true"><span data-slideshow="progress"></span></div>
-        </div>
+          <span class="diagonal-lines diagonal-lines--white" aria-hidden="true"></span>
+          <div class="hero__content-body">
+            <div class="hero__copy-stage">
+              <article class="hero-copy is-current" data-slideshow="copy" aria-hidden="false">
+                <h1 class="heading heading--big">Postes metálicos</h1>
+                <div class="hero-copy__description">
+                  <p class="heading heading--mini hero-copy__kicker">Hechos a medida y con presencia arquitectónica</p>
+                  <p class="text-body">
+                    Diseñamos y fabricamos postes metálicos que combinan funcionalidad, resistencia y estética,
+                    adaptándose a proyectos urbanos, industriales y energéticos que requieren una solución sólida,
+                    personalizada y visualmente ordenada.
+                  </p>
+                </div>
+                <a class="button button--white" href="/productos/postes/">Ver postes</a>
+              </article>
 
-        <div class="hero__nav" aria-label="Seleccionar imagen principal">
-          <button class="hero-thumb is-current" type="button" data-slideshow="thumb" aria-label="Imagen 1" aria-pressed="true"><img src="assets/images/home/hero-postes.png" alt="" /></button>
-          <button class="hero-thumb" type="button" data-slideshow="thumb" aria-label="Imagen 2" aria-pressed="false"><img src="assets/images/home/feature-02.png" alt="" /></button>
-          <button class="hero-thumb" type="button" data-slideshow="thumb" aria-label="Imagen 3" aria-pressed="false"><img src="assets/images/home/feature-03.png" alt="" /></button>
-          <button class="hero-thumb" type="button" data-slideshow="thumb" aria-label="Imagen 4" aria-pressed="false"><img src="assets/images/home/feature-04.png" alt="" /></button>
+              <article class="hero-copy" data-slideshow="copy" aria-hidden="true">
+                <h1 class="heading heading--big">Ingeniería y diseño</h1>
+                <div class="hero-copy__description">
+                  <p class="heading heading--mini hero-copy__kicker">Diseñamos confianza desde la ingeniería</p>
+                  <p class="text-body">
+                    Desarrollamos cálculo y diseño estructural para proyectos que exigen seguridad, precisión y
+                    respaldo técnico, integrando criterios de fabricación, operación y durabilidad para reducir
+                    riesgos y dar mayor control desde la etapa inicial.
+                  </p>
+                </div>
+                <a class="button button--white" href="/soluciones/ingenieria-y-diseno/">Cotizar diseño</a>
+              </article>
+
+              <article class="hero-copy" data-slideshow="copy" aria-hidden="true">
+                <h1 class="heading heading--big">Fabricante de torres</h1>
+                <div class="hero-copy__description">
+                  <p class="heading heading--mini hero-copy__kicker">Torres que conectan grandes desafíos</p>
+                  <p class="text-body">
+                    Fabricamos torres metálicas pensadas para responder a proyectos que demandan altura, estabilidad
+                    y desempeño confiable, ofreciendo soluciones adaptadas a distintos entornos y necesidades
+                    operativas.
+                  </p>
+                </div>
+                <a class="button button--white" href="/productos/torres/">Ver torres</a>
+              </article>
+
+              <article class="hero-copy" data-slideshow="copy" aria-hidden="true">
+                <h1 class="heading heading--big">Soluciones contra el rayo</h1>
+                <div class="hero-copy__description">
+                  <p class="heading heading--mini hero-copy__kicker">Diseñadas para proteger personas, equipos e infraestructura</p>
+                  <p class="text-body">
+                    Implementamos soluciones de protección contra descargas atmosféricas orientadas a reducir riesgos
+                    humanos, técnicos y operativos, cuidando la continuidad y seguridad de instalaciones expuestas o
+                    críticas.
+                  </p>
+                </div>
+                <a class="button button--white" href="/soluciones/proteccion-contra-descargas-atmosfericas/">Ver soluciones</a>
+              </article>
+            </div>
+            <div class="slider-controller hero__slider-controller">
+              <div class="slider-controller__meta">
+                <div class="slider-controller__controls" aria-label="Controles del slider">
+                  <button class="slider-controller__button" type="button" data-slideshow="previous" aria-label="Slide anterior">
+                    <svg class="lucide lucide-chevron-left" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="m15 18-6-6 6-6" />
+                    </svg>
+                  </button>
+                  <button class="slider-controller__button" type="button" data-slideshow="next" aria-label="Siguiente slide">
+                    <svg class="lucide lucide-chevron-right" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="m9 18 6-6-6-6" />
+                    </svg>
+                  </button>
+                </div>
+                <p class="slider-controller__count" aria-live="polite">
+                  <span data-slideshow="count-current">01</span> de <span data-slideshow="count-total">04</span>
+                </p>
+              </div>
+              <div class="slider-controller__progress" aria-hidden="true">
+                <span data-slideshow="progress"></span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section class="about section" id="nosotros" aria-labelledby="about-title">
+      <section class="about section" id="nosotros" aria-labelledby="about-title" data-header-theme="light">
         <div class="container about__inner">
           <div class="section-heading section-heading--center">
             <p class="eyebrow"><span class="eyebrow__marker"></span>Quiénes somos</p>
@@ -98,24 +192,37 @@
 
           <div class="about-gallery" data-gallery>
             <div class="about-gallery__media">
-              <img src="assets/images/home/feature-01.png" alt="Ingeniería y fabricación de estructuras metálicas" data-gallery-image />
+              <img src="assets/images/home/feature-01.png" alt="Ingeniería especializada de SIEMET" data-gallery-image />
             </div>
             <div class="about-gallery__content">
-              <div>
-                <p class="text-mono" data-gallery-count>01 de 04</p>
-                <h3 class="heading heading--medium">Ingeniería especializada</h3>
-                <p class="text-body">Cálculo y diseño estructural con respaldo técnico.</p>
+              <div class="about-gallery__heading">
+                <h3 class="heading heading--medium" data-gallery-title>Ingeniería especializada</h3>
+                <p class="text-body" data-gallery-description>Cálculo y diseño estructural con respaldo técnico.</p>
               </div>
               <div class="about-gallery__controls">
-                <div class="about-gallery__thumbs" aria-label="Galería de capacidades">
-                  <button class="is-current" type="button" data-gallery-thumb data-src="assets/images/home/feature-01.png" aria-label="Imagen 1" aria-pressed="true"><img src="assets/images/home/feature-01.png" alt="" /></button>
-                  <button type="button" data-gallery-thumb data-src="assets/images/home/feature-02.png" aria-label="Imagen 2" aria-pressed="false"><img src="assets/images/home/feature-02.png" alt="" /></button>
-                  <button type="button" data-gallery-thumb data-src="assets/images/home/feature-03.png" aria-label="Imagen 3" aria-pressed="false"><img src="assets/images/home/feature-03.png" alt="" /></button>
-                  <button type="button" data-gallery-thumb data-src="assets/images/home/feature-04.png" aria-label="Imagen 4" aria-pressed="false"><img src="assets/images/home/feature-04.png" alt="" /></button>
+                <div class="slider-controller slider-controller--blue about-gallery__counter">
+                  <div class="slider-controller__meta">
+                    <div class="slider-controller__controls" aria-label="Controles de la galería">
+                      <button class="slider-controller__button" type="button" data-gallery-previous aria-label="Imagen anterior">
+                        <svg class="lucide lucide-chevron-left" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>
+                      </button>
+                      <button class="slider-controller__button" type="button" data-gallery-next aria-label="Imagen siguiente">
+                        <svg class="lucide lucide-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+                      </button>
+                    </div>
+                    <p class="slider-controller__count" aria-live="polite">
+                      <span data-gallery-count-current>01</span> de <span data-gallery-count-total>04</span>
+                    </p>
+                  </div>
+                  <div class="slider-controller__progress" aria-hidden="true">
+                    <span data-gallery-progress></span>
+                  </div>
                 </div>
-                <div class="about-gallery__arrows">
-                  <button class="icon-button" type="button" data-gallery-previous aria-label="Imagen anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7" /></svg></button>
-                  <button class="icon-button" type="button" data-gallery-next aria-label="Imagen siguiente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7" /></svg></button>
+                <div class="about-gallery__thumbs" aria-label="Galería de capacidades">
+                  <button class="is-current" type="button" data-gallery-thumb data-src="assets/images/home/feature-01.png" data-title="Ingeniería especializada" data-description="Cálculo y diseño estructural con respaldo técnico." data-alt="Ingeniería especializada de SIEMET" aria-label="Ingeniería especializada" aria-pressed="true"><img src="assets/images/home/feature-01.png" alt="" /></button>
+                  <button type="button" data-gallery-thumb data-src="assets/images/home/feature-02.png" data-title="Fabricación de calidad" data-description="Procesos certificados y control en cada etapa." data-alt="Fabricación de calidad de SIEMET" aria-label="Fabricación de calidad" aria-pressed="false"><img src="assets/images/home/feature-02.png" alt="" /></button>
+                  <button type="button" data-gallery-thumb data-src="assets/images/home/feature-03.png" data-title="Ejecución y montaje" data-description="Equipos expertos para una instalación segura." data-alt="Ejecución y montaje de SIEMET" aria-label="Ejecución y montaje" aria-pressed="false"><img src="assets/images/home/feature-03.png" alt="" /></button>
+                  <button type="button" data-gallery-thumb data-src="assets/images/home/feature-04.png" data-title="Acompañamiento integral" data-description="Soporte técnico antes, durante y después del proyecto." data-alt="Acompañamiento integral de SIEMET" aria-label="Acompañamiento integral" aria-pressed="false"><img src="assets/images/home/feature-04.png" alt="" /></button>
                 </div>
               </div>
             </div>
@@ -123,89 +230,137 @@
         </div>
       </section>
 
-      <section class="trajectory section" id="trayectoria" aria-labelledby="trajectory-title">
+      <section class="trajectory section" id="trayectoria" aria-labelledby="trajectory-title" data-header-theme="light" data-trajectory>
         <div class="container trajectory__inner">
           <div class="section-heading section-heading--center">
             <p class="eyebrow"><span class="eyebrow__marker"></span>Trayectoria</p>
             <h2 class="heading heading--regular" id="trajectory-title">Números que respaldan nuestra trayectoria</h2>
           </div>
-          <div class="trajectory__grid">
-            <article class="trajectory-card trajectory-card--image"><img src="assets/images/home/trajectory-01.jpg" alt="Proyecto de infraestructura metálica de SIEMET" loading="lazy" /></article>
-            <article class="trajectory-card trajectory-card--metric"><p class="description-mega">+480</p><h3 class="text-mono">Proyectos realizados</h3><p class="text-body">Cálculo y diseño estructural con respaldo técnico.</p></article>
-            <article class="trajectory-card trajectory-card--image"><img src="assets/images/home/feature-01.png" alt="Fabricación de estructuras metálicas" loading="lazy" /></article>
-            <article class="trajectory-card trajectory-card--metric"><p class="description-mega">+1400</p><h3 class="text-mono">Estructuras fabricadas</h3><p class="text-body">Cálculo y diseño estructural con respaldo técnico.</p></article>
-            <article class="trajectory-card trajectory-card--image"><img src="assets/images/home/trajectory-03.png" alt="Estructura metálica instalada por SIEMET" loading="lazy" /></article>
-            <article class="trajectory-card trajectory-card--metric"><p class="description-mega">+10</p><h3 class="text-mono">Años de trayectoria</h3><p class="text-body">Cálculo y diseño estructural con respaldo técnico.</p></article>
+          <div class="trajectory__marquee" aria-label="Cifras de trayectoria de SIEMET">
+            <div class="trajectory__marquee-track" data-trajectory-track>
+              <div class="trajectory__marquee-group" data-trajectory-group>
+                <article class="trajectory-card trajectory-card--image"><img src="assets/images/home/trajectory-01.jpg" alt="Proyecto de infraestructura metálica de SIEMET" loading="lazy" /></article>
+                <article class="trajectory-card trajectory-card--metric"><p class="description-mega" data-counter data-counter-target="480" aria-label="Más de 480"><span aria-hidden="true">+<span data-counter-value>0</span></span></p><div class="trajectory-card__copy"><h3 class="text-mono">Proyectos realizados</h3><p class="text-body">Cálculo y diseño estructural con respaldo técnico.</p></div></article>
+                <article class="trajectory-card trajectory-card--image"><img src="assets/images/home/feature-01.png" alt="Fabricación de estructuras metálicas" loading="lazy" /></article>
+                <article class="trajectory-card trajectory-card--metric"><p class="description-mega" data-counter data-counter-target="1400" aria-label="Más de 1400"><span aria-hidden="true">+<span data-counter-value>0</span></span></p><div class="trajectory-card__copy"><h3 class="text-mono">Estructuras fabricadas</h3><p class="text-body">Cálculo y diseño estructural con respaldo técnico.</p></div></article>
+                <article class="trajectory-card trajectory-card--image"><img src="assets/images/home/trajectory-03.png" alt="Estructura metálica instalada por SIEMET" loading="lazy" /></article>
+                <article class="trajectory-card trajectory-card--metric"><p class="description-mega" data-counter data-counter-target="10" aria-label="Más de 10"><span aria-hidden="true">+<span data-counter-value>0</span></span></p><div class="trajectory-card__copy"><h3 class="text-mono">Años de trayectoria</h3><p class="text-body">Cálculo y diseño estructural con respaldo técnico.</p></div></article>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="process section" id="proceso" aria-labelledby="process-title">
-        <div class="container process__inner">
-          <div class="section-heading section-heading--split">
-            <div><p class="eyebrow"><span class="eyebrow__marker"></span>Proceso</p><h2 class="heading heading--regular" id="process-title">De la ingeniería al montaje</h2></div>
-            <p class="text-body">Un proceso integral para entregar soluciones confiables</p>
-          </div>
-          <div class="accordion process__steps" data-accordion>
-            <details class="process-step" open>
-              <summary><span class="heading heading--medium">Evaluamos</span><span class="text-mono-medium">01</span></summary>
-              <div class="process-step__body"><p class="text-body">Analizamos el requerimiento, el entorno y las condiciones de operación.</p><img src="assets/images/home/process.png" alt="Evaluación técnica de una estructura metálica" loading="lazy" /></div>
-            </details>
-            <details class="process-step"><summary><span class="heading heading--medium">Diseñamos</span><span class="text-mono-medium">02</span></summary></details>
-            <details class="process-step"><summary><span class="heading heading--medium">Fabricamos</span><span class="text-mono-medium">03</span></summary></details>
-            <details class="process-step"><summary><span class="heading heading--medium">Preparamos y transportamos</span><span class="text-mono-medium">04</span></summary></details>
-            <details class="process-step"><summary><span class="heading heading--medium">Montamos y acompañamos</span><span class="text-mono-medium">05</span></summary></details>
-          </div>
-        </div>
-      </section>
+      <div data-shared-process></div>
 
-      <section class="industries section" id="industrias" aria-labelledby="industries-title">
+      <section class="industries section" id="industrias" aria-labelledby="industries-title" data-header-theme="dark" data-header-surface="blue" data-industries>
         <div class="container industries__inner">
           <div class="section-heading section-heading--center section-heading--inverse">
             <p class="text-mono">＋ Industrias</p>
             <h2 class="heading heading--regular" id="industries-title">Soluciones metálicas adaptadas a las exigencias de cada sector.</h2>
           </div>
-          <div class="industries__grid">
-            <article class="industry-card"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M34 4 16 34h14l-2 26 20-34H34Z" /></svg><h3 class="heading heading--medium">Energía</h3></article>
-            <article class="industry-card"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 50V30M24 58h16M27 30h10M18 24a20 20 0 0 1 28 0M11 17a30 30 0 0 1 42 0" /></svg><h3 class="heading heading--medium">Telecomunicaciones</h3></article>
-            <article class="industry-card"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M20 58h24M32 58V20M32 20h16v12H32M22 20h10M22 20v8" /></svg><h3 class="heading heading--medium">Alumbrado público</h3></article>
-            <article class="industry-card"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M8 56h48V28L42 38V28L28 38V18H8ZM16 26h4M16 36h4M16 46h4M38 46h6" /></svg><h3 class="heading heading--medium">Industria</h3></article>
-            <article class="industry-card"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M8 26h36l12 8-12 8H8ZM18 42v14M36 42v14M13 56h28M20 26l6-10h12l6 10" /></svg><h3 class="heading heading--medium">Seguridad y videovigilancia</h3></article>
-            <article class="industry-card"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="m10 52 18-36 10 18 6-10 10 28ZM22 52l10-20 12 20" /></svg><h3 class="heading heading--medium">Minería</h3></article>
+          <div class="industries__showcase">
+            <div class="industries__list" aria-label="Sectores atendidos" data-no-scramble>
+              <button class="industry-tab is-current" type="button" data-industry-tab aria-pressed="true">
+                <span class="industry-tab__row">
+                  <svg class="lucide lucide-zap" viewBox="0 0 24 24" aria-hidden="true"><path d="M15.914 4a1.5 1.5 0 00-2.474-1.561l-9 9A1.5 1.5 0 005.5 14h4.002a.5.5 0 01.471.666L8.086 20a1.5 1.5 0 002.475 1.56l9-9A1.5 1.5 0 0018.5 10h-3.997a.5.5 0 01-.472-.667z" /></svg>
+                  <span class="heading heading--medium">Energía</span>
+                </span>
+                <span class="industry-tab__progress" aria-hidden="true"><span data-industry-progress></span></span>
+              </button>
+              <button class="industry-tab" type="button" data-industry-tab aria-pressed="false">
+                <span class="industry-tab__row">
+                  <svg class="lucide lucide-radio-tower" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.9 16.1C1 12.2 1 5.8 4.9 1.9" /><path d="M7.8 4.7a6.14 6.14 0 0 0-.8 7.5" /><circle cx="12" cy="9" r="2" /><path d="M16.2 4.8c2 2 2.26 5.11.8 7.47" /><path d="M19.1 1.9a9.96 9.96 0 0 1 0 14.1" /><path d="M9.5 18h5" /><path d="m8 22 4-11 4 11" /></svg>
+                  <span class="heading heading--medium">Telecomunicaciones</span>
+                </span>
+                <span class="industry-tab__progress" aria-hidden="true"><span data-industry-progress></span></span>
+              </button>
+              <button class="industry-tab" type="button" data-industry-tab aria-pressed="false">
+                <span class="industry-tab__row">
+                  <svg class="lucide lucide-lamp-wall-down" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.929 18.629A1 1 0 0 1 19 20H9a1 1 0 0 1-.928-1.371l2-5A1 1 0 0 1 11 13h6a1 1 0 0 1 .928.629z" /><path d="M6 3a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H5a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" /><path d="M8 6h4a2 2 0 0 1 2 2v5" /></svg>
+                  <span class="heading heading--medium">Alumbrado público</span>
+                </span>
+                <span class="industry-tab__progress" aria-hidden="true"><span data-industry-progress></span></span>
+              </button>
+              <button class="industry-tab" type="button" data-industry-tab aria-pressed="false">
+                <span class="industry-tab__row">
+                  <svg class="lucide lucide-factory" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16h.01" /><path d="M16 16h.01" /><path d="M3 19a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5a.5.5 0 0 0-.769-.422l-4.462 2.844A.5.5 0 0 1 15 10.5v-2a.5.5 0 0 0-.769-.422L9.77 10.922A.5.5 0 0 1 9 10.5V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z" /><path d="M8 16h.01" /></svg>
+                  <span class="heading heading--medium">Industria</span>
+                </span>
+                <span class="industry-tab__progress" aria-hidden="true"><span data-industry-progress></span></span>
+              </button>
+              <button class="industry-tab" type="button" data-industry-tab aria-pressed="false">
+                <span class="industry-tab__row">
+                  <svg class="lucide lucide-cctv" viewBox="0 0 24 24" aria-hidden="true"><path d="M16.75 12h3.632a1 1 0 0 1 .894 1.447l-2.034 4.069a1 1 0 0 1-1.708.134l-2.124-2.97" /><path d="M17.106 9.053a1 1 0 0 1 .447 1.341l-3.106 6.211a1 1 0 0 1-1.342.447L3.61 12.3a2.92 2.92 0 0 1-1.3-3.91L3.69 5.6a2.92 2.92 0 0 1 3.92-1.3z" /><path d="M2 19h3.76a2 2 0 0 0 1.8-1.1L9 15" /><path d="M2 21v-4" /><path d="M7 9h.01" /></svg>
+                  <span class="heading heading--medium">Seguridad y videovigilancia</span>
+                </span>
+                <span class="industry-tab__progress" aria-hidden="true"><span data-industry-progress></span></span>
+              </button>
+              <button class="industry-tab" type="button" data-industry-tab aria-pressed="false">
+                <span class="industry-tab__row">
+                  <svg class="lucide lucide-stone" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.264 2.205A4 4 0 0 0 6.42 4.211l-4 8a4 4 0 0 0 1.359 5.117l6 4a4 4 0 0 0 4.438 0l6-4a4 4 0 0 0 1.576-4.592l-2-6a4 4 0 0 0-2.53-2.53z" /><path d="M11.99 22 14 12l7.822 3.184" /><path d="M14 12 8.47 2.302" /></svg>
+                  <span class="heading heading--medium">Minería</span>
+                </span>
+                <span class="industry-tab__progress" aria-hidden="true"><span data-industry-progress></span></span>
+              </button>
+            </div>
+            <div class="industries__media" data-industries-media aria-live="polite">
+              <figure class="industry-slide is-current" data-industry-slide aria-hidden="false"><img src="assets/images/home/industries/energy.png" alt="Subestación eléctrica del sector energía" data-industry-parallax /></figure>
+              <figure class="industry-slide" data-industry-slide aria-hidden="true"><img src="assets/images/home/industries/telecommunications.png" alt="Infraestructura del sector telecomunicaciones" loading="lazy" data-industry-parallax /></figure>
+              <figure class="industry-slide" data-industry-slide aria-hidden="true"><img src="assets/images/home/industries/public-lighting.png" alt="Alumbrado público en una avenida" loading="lazy" data-industry-parallax /></figure>
+              <figure class="industry-slide" data-industry-slide aria-hidden="true"><img src="assets/images/home/industries/industry.png" alt="Instalación metálica para el sector industrial" loading="lazy" data-industry-parallax /></figure>
+              <figure class="industry-slide" data-industry-slide aria-hidden="true"><img src="assets/images/home/industries/security.png" alt="Sistema de seguridad y videovigilancia industrial" loading="lazy" data-industry-parallax /></figure>
+              <figure class="industry-slide" data-industry-slide aria-hidden="true"><img src="assets/images/home/industries/mining.png" alt="Infraestructura metálica para el sector minero" loading="lazy" data-industry-parallax /></figure>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="clients section" id="clientes" aria-labelledby="clients-title">
+      <section class="clients section" id="clientes" aria-labelledby="clients-title" data-header-theme="light" data-client-wall>
         <div class="container clients__inner">
-          <div class="section-heading section-heading--center section-heading--inverse">
-            <p class="text-mono">＋ Clientes</p>
+          <div class="section-heading section-heading--center">
+            <p class="eyebrow"><span class="eyebrow__marker"></span>Clientes</p>
             <h2 class="heading heading--regular" id="clients-title">Clientes que confían en SIEMET</h2>
             <p class="text-body">Empresas que apuestan por infraestructura metálica segura, resistente y confiable.</p>
           </div>
-          <div class="clients__grid">
-            <div class="client-logo"><img src="assets/images/home/client-01.png" alt="Cliente de SIEMET" loading="lazy" /></div>
-            <div class="client-logo"><img src="assets/images/home/client-02.png" alt="Cliente de SIEMET" loading="lazy" /></div>
-            <div class="client-logo"><img src="assets/images/home/client-03.png" alt="Cliente de SIEMET" loading="lazy" /></div>
-            <div class="client-logo"><img src="assets/images/home/client-04.png" alt="Cliente de SIEMET" loading="lazy" /></div>
-            <div class="client-logo"><img src="assets/images/home/client-05.png" alt="Cliente de SIEMET" loading="lazy" /></div>
-            <div class="client-logo"><img src="assets/images/home/client-06.png" alt="Cliente de SIEMET" loading="lazy" /></div>
+          <div class="clients__wall" data-client-wall-list>
+            <article class="client-card" data-client-card>
+              <div class="client-logo" data-client-target-parent>
+                <div class="client-logo__target" data-client-target data-client-key="viditek" data-client-name="Viditek"><img src="assets/images/home/clients/viditek.png" alt="VPT Viditek" /></div>
+              </div>
+              <p class="text-mono" data-client-label>Viditek</p>
+            </article>
+            <article class="client-card" data-client-card>
+              <div class="client-logo" data-client-target-parent>
+                <div class="client-logo__target" data-client-target data-client-key="ans" data-client-name="ANS"><img src="assets/images/home/clients/ans.png" alt="ANS Comunicaciones" /></div>
+              </div>
+              <p class="text-mono" data-client-label>ANS</p>
+            </article>
+            <article class="client-card" data-client-card>
+              <div class="client-logo" data-client-target-parent>
+                <div class="client-logo__target" data-client-target data-client-key="engie" data-client-name="Engie"><img src="assets/images/home/clients/engie.png" alt="Engie" /></div>
+              </div>
+              <p class="text-mono" data-client-label>Engie</p>
+            </article>
+            <article class="client-card" data-client-card>
+              <div class="client-logo" data-client-target-parent>
+                <div class="client-logo__target" data-client-target data-client-key="las-bambas" data-client-name="Las Bambas"><img src="assets/images/home/clients/las-bambas.png" alt="Las Bambas" /></div>
+              </div>
+              <p class="text-mono" data-client-label>Las Bambas</p>
+            </article>
+            <article class="client-card" data-client-card>
+              <div class="client-logo" data-client-target-parent>
+                <div class="client-logo__target" data-client-target data-client-key="efc" data-client-name="EFC"><img src="assets/images/home/clients/efc.png" alt="EFC" /></div>
+              </div>
+              <p class="text-mono" data-client-label>EFC</p>
+            </article>
           </div>
         </div>
       </section>
 
-      <section class="faq section" id="preguntas" aria-labelledby="faq-title">
-        <div class="container faq__inner">
-          <div class="section-heading section-heading--center"><p class="text-mono">＋ Preguntas frecuentes</p><h2 class="heading heading--regular" id="faq-title">Preguntas frecuentes</h2></div>
-          <div class="accordion faq__list" data-accordion>
-            <details class="faq-item" open><summary class="heading heading--small">¿Qué tipo de soluciones desarrolla SIEMET?</summary><p class="text-body">SIEMET desarrolla soluciones metálicas para proyectos que requieren seguridad, resistencia y respaldo técnico. Entre sus servicios se encuentran ingeniería y diseño estructural, fabricación de torres, postes metálicos y sistemas de protección contra descargas atmosféricas.</p></details>
-            <details class="faq-item"><summary class="heading heading--small">¿SIEMET solo fabrica estructuras o también realiza el diseño?</summary></details>
-            <details class="faq-item"><summary class="heading heading--small">¿Qué incluye el servicio de ingeniería y diseño?</summary></details>
-            <details class="faq-item"><summary class="heading heading--small">¿Qué diferencia hay entre una torre auto soportada y una torre ventada?</summary></details>
-            <details class="faq-item"><summary class="heading heading--small">¿En qué proyectos se pueden usar los postes metálicos?</summary></details>
-          </div>
-        </div>
-      </section>
+      <div data-shared-faq></div>
     </main>
+
+    <div data-shared-footer></div>
   </body>
 </html>

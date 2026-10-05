@@ -7,16 +7,8 @@
     <title>Sistema visual | SIEMET</title>
     <link rel="icon" href="assets/brand/logo-siemet-blue.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/pages/design-system.css" />
     <script src="scripts/main.js" type="module"></script>
-    <style>
-      .styleguide { padding-block: var(--space-10); }
-      .styleguide__header { display: grid; gap: var(--space-8); margin-bottom: var(--space-12); }
-      .styleguide__logo { width: min(22.875rem, 100%); height: auto; }
-      .styleguide__section { display: grid; gap: var(--space-6); padding-block: var(--space-8); border-top: 1px solid var(--color-gray-200); }
-      .styleguide__row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-4); }
-      .styleguide__swatches { display: grid; grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); gap: var(--space-4); }
-      .swatch { min-height: 8rem; display: flex; align-items: end; padding: var(--space-4); border: 1px solid var(--color-gray-200); background: var(--swatch); color: var(--swatch-text, var(--color-dark-800)); }
-    </style>
   </head>
   <body>
     <a class="skip-link" href="#main-content">Saltar al contenido</a>
@@ -33,23 +25,93 @@
       <section class="styleguide__section" aria-labelledby="colors-title">
         <h2 class="heading heading--small" id="colors-title">Colores</h2>
         <div class="styleguide__swatches">
-          <div class="swatch" style="--swatch: var(--color-blue-600); --swatch-text: white">Blue 600 · #1E3388</div>
-          <div class="swatch" style="--swatch: var(--color-blue-800); --swatch-text: white">Blue 800 · #1D2B5A</div>
-          <div class="swatch" style="--swatch: var(--color-accent); --swatch-text: white">Accent · #E07A5F</div>
-          <div class="swatch" style="--swatch: var(--color-gray-100)">Gray 100 · #EFF5FA</div>
+          <div class="swatch" style="--swatch: var(--color-title); --swatch-text: var(--color-white)">Blue/title · #141416</div>
+          <div class="swatch" style="--swatch: var(--color-blue-800); --swatch-text: var(--color-white)">Blue 800 · #1D2B5A</div>
+          <div class="swatch" style="--swatch: var(--color-footer); --swatch-text: var(--color-white)">Footer blue · #192B5D</div>
+          <div class="swatch" style="--swatch: var(--color-blue-600); --swatch-text: var(--color-white)">Blue 600 · #1E3388</div>
+          <div class="swatch" style="--swatch: var(--color-blue-500); --swatch-text: var(--color-white)">Blue 500 · #394D94</div>
+          <div class="swatch" style="--swatch: var(--color-blue-400); --swatch-text: var(--color-white)">Blue 400 · #4A67F6</div>
+          <div class="swatch" style="--swatch: var(--color-accent); --swatch-text: var(--color-white)">Accent · #E07A5F</div>
+          <div class="swatch" style="--swatch: var(--color-cyan-500); --swatch-text: var(--color-white)">Cyan 500 · #00A7E1</div>
           <div class="swatch" style="--swatch: var(--color-gray-200)">Gray 200 · #E2ECF4</div>
-          <div class="swatch" style="--swatch: var(--color-dark-800); --swatch-text: white">Dark 800 · #1B1D21</div>
+          <div class="swatch" style="--swatch: var(--color-gray-100)">Gray 100 · #EFF5F9</div>
+          <div class="swatch" style="--swatch: var(--color-blue-50)">Blue 50 · #F6FBFF</div>
+          <div class="swatch" style="--swatch: var(--color-border)">Border · #CCD4DA</div>
+          <div class="swatch" style="--swatch: var(--color-white)">White · #FFFFFF</div>
+          <div class="swatch" style="--swatch: linear-gradient(var(--color-black-overlay-15), var(--color-black-overlay-15)), var(--color-white)">Black overlay · 15%</div>
+          <div class="swatch" style="--swatch: var(--color-blue-600-bright); --swatch-text: var(--color-white)">Blue 600 (brillante) · #2954FF</div>
         </div>
+      </section>
+
+      <section class="styleguide__section" aria-labelledby="layout-title">
+        <h2 class="heading heading--small" id="layout-title">Layout</h2>
+        <p class="text-body">Todas las secciones ocupan el ancho máximo disponible, sin un límite global de contenedor.</p>
+        <div class="styleguide__layout-demo">
+          <span>64px</span>
+          <strong>Contenido al ancho máximo</strong>
+          <span>64px</span>
+        </div>
+        <p class="styleguide__type-meta">Desktop y tablet · gutters laterales de 64px</p>
+        <p class="styleguide__type-meta">Mobile hasta 767px · gutters laterales de 20px</p>
+        <p class="styleguide__type-meta">Header · altura 89px · separación hasta el bloque de título del hero: 40px</p>
+        <p class="styleguide__type-meta">Footer · padding lateral de 48px en todos los tamaños</p>
+        <p class="styleguide__type-meta">Página Nosotros · secciones principales con padding vertical máximo de 137px · gutters compartidos de 64px desktop y 20px mobile</p>
       </section>
 
       <section class="styleguide__section" aria-labelledby="type-title">
         <h2 class="heading heading--small" id="type-title">Tipografía</h2>
-        <p class="heading heading--big">Título grande</p>
-        <p class="heading heading--regular">Título regular</p>
-        <p class="heading heading--medium">Título mediano</p>
-        <p class="heading heading--small">Título pequeño</p>
-        <p class="text-body">Texto descriptivo regular para contenido continuo y mensajes de apoyo.</p>
-        <p class="text-mono">Etiqueta mono</p>
+        <p class="text-body">El sistema utiliza Geist y Geist Mono, siempre en estilo normal. No se utilizan cursivas. La escala mobile se activa hasta 767px.</p>
+        <div class="styleguide__type-list">
+          <div class="styleguide__type-sample">
+            <p class="heading heading--big">Título grande</p>
+            <p class="styleguide__type-meta">Geist · Desktop 64px / Mobile 48px · Medium 500 · line-height 100% · tracking −4%</p>
+          </div>
+          <div class="styleguide__type-sample">
+            <p class="heading" style="font-size: var(--font-size-title-page-hero)">Título de página en hero</p>
+            <p class="styleguide__type-meta">Geist · Desktop 72px / Mobile 48px · Medium 500 · line-height 100% · tracking −4%</p>
+          </div>
+          <div class="styleguide__type-sample">
+            <p class="heading heading--regular">Título regular</p>
+            <p class="styleguide__type-meta">Geist · Desktop 48px / Mobile 36px · Medium 500 · line-height 100% · tracking −4%</p>
+          </div>
+          <div class="styleguide__type-sample">
+            <p class="heading heading--medium">Título mediano</p>
+            <p class="styleguide__type-meta">Geist · Desktop 32px / Mobile 28px · Medium 500 · line-height 100% · tracking −4%</p>
+          </div>
+          <div class="styleguide__type-sample">
+            <p class="heading heading--feature">Título destacado</p>
+            <p class="styleguide__type-meta">Geist · Desktop 40px / Mobile 32px · Medium 500 · line-height 108% · tracking −4% · uso en misión y visión</p>
+          </div>
+          <div class="styleguide__type-sample">
+            <p class="heading heading--small">Título pequeño</p>
+            <p class="styleguide__type-meta">Geist · Desktop 21px / Mobile 20px · Medium 500 · line-height 100% · tracking −4%</p>
+          </div>
+          <div class="styleguide__type-sample">
+            <p class="heading heading--mini">Título mini</p>
+            <p class="styleguide__type-meta">Geist · Desktop 17px / Mobile 16px · Medium 500 · line-height 100% · tracking 0</p>
+            <p class="styleguide__type-meta">Uso en el hero · separación con la descripción: 8px</p>
+          </div>
+          <div class="styleguide__type-sample">
+            <p class="description-mega">Descripción mega</p>
+            <p class="styleguide__type-meta">Geist · Desktop 96px / Mobile 56px · Regular 400 · line-height 100% · tracking −8%</p>
+          </div>
+          <div class="styleguide__type-sample">
+            <p class="text-body">Texto descriptivo regular para contenido continuo y mensajes de apoyo.</p>
+            <p class="styleguide__type-meta">Geist · Desktop 17px / Mobile 16px · Regular 400 · line-height 150% · tracking 0</p>
+          </div>
+          <div class="styleguide__type-sample">
+            <p class="text-mono">Descripción mono regular</p>
+            <p class="styleguide__type-meta">Geist Mono · Desktop 17px / Mobile 16px · Medium 500 · line-height normal · mayúsculas</p>
+          </div>
+          <div class="styleguide__type-sample">
+            <p class="text-mono-medium">Descripción mono mediana</p>
+            <p class="styleguide__type-meta">Geist Mono · Desktop 32px / Mobile 24px · Medium 500 · line-height 90% · mayúsculas</p>
+          </div>
+          <div class="styleguide__type-sample">
+            <p><span class="button button--primary">Texto de botón</span></p>
+            <p class="styleguide__type-meta">Geist Mono · Desktop 17px / Mobile 16px · Medium 500 · line-height normal · mayúsculas</p>
+          </div>
+        </div>
       </section>
 
       <section class="styleguide__section" aria-labelledby="components-title">
@@ -58,10 +120,73 @@
         <div class="styleguide__row">
           <a class="button button--primary" href="#">Botón primario</a>
           <a class="button button--secondary" href="#">Botón secundario</a>
+          <a class="button button--bright" href="#">Botón brillante</a>
+          <a class="button button--white" href="#">Botón blanco</a>
           <button class="icon-button" type="button" aria-label="Añadir">
             <svg aria-hidden="true" viewBox="0 0 20 20" width="20" height="20"><path d="M10 4v12M4 10h12" /></svg>
           </button>
         </div>
+        <div class="styleguide__slider-preview">
+          <div class="slider-controller">
+            <div class="slider-controller__meta">
+              <div class="slider-controller__controls" aria-label="Ejemplo de controles del slider">
+                <button class="slider-controller__button" type="button" aria-label="Slide anterior">
+                  <svg class="lucide lucide-chevron-left" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>
+                </button>
+                <button class="slider-controller__button" type="button" aria-label="Siguiente slide">
+                  <svg class="lucide lucide-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+                </button>
+              </div>
+              <p class="slider-controller__count"><span>01</span> de <span>04</span></p>
+            </div>
+            <div class="slider-controller__progress" aria-hidden="true"><span class="styleguide__slider-progress"></span></div>
+          </div>
+        </div>
+        <div class="styleguide__slider-preview styleguide__slider-preview--light">
+          <div class="slider-controller slider-controller--blue">
+            <div class="slider-controller__meta">
+              <div class="slider-controller__controls" aria-label="Ejemplo de controles del slider en azul">
+                <button class="slider-controller__button" type="button" aria-label="Slide anterior">
+                  <svg class="lucide lucide-chevron-left" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>
+                </button>
+                <button class="slider-controller__button" type="button" aria-label="Siguiente slide">
+                  <svg class="lucide lucide-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+                </button>
+              </div>
+              <p class="slider-controller__count"><span>01</span> de <span>04</span></p>
+            </div>
+            <div class="slider-controller__progress" aria-hidden="true"><span class="styleguide__slider-progress"></span></div>
+          </div>
+        </div>
+        <p class="text-mono">Slider controller · componente reutilizable · timer 10 segundos · debajo del botón del hero · ancho desktop 25vw · ancho mobile 100% · scramble solo en el número actual · variante blue para superficies claras</p>
+        <p class="text-mono">Botones · radio de esquina 8px · los controles del slider aplican el mismo radio durante hover</p>
+        <div class="styleguide__diagonal-lines-preview" aria-label="Variantes del elemento de líneas diagonales flexibles">
+          <div class="styleguide__diagonal-lines-surface styleguide__diagonal-lines-surface--light">
+            <span class="diagonal-lines diagonal-lines--blue-600" aria-hidden="true"></span>
+          </div>
+          <div class="styleguide__diagonal-lines-surface styleguide__diagonal-lines-surface--blue">
+            <span class="diagonal-lines diagonal-lines--white" aria-hidden="true"></span>
+          </div>
+        </div>
+        <p class="text-mono">Líneas diagonales flexibles · ancho 14px · separación interna 8.13px · variantes Blue 600 y White · la altura se adapta al contenedor</p>
+        <p class="text-mono">Hero de página · altura fija de 100vh · padding desktop de 128px vertical y 64px lateral · patrón vertical de 14px junto al bloque completo · separación horizontal 24px · breadcrumb Geist Mono 15px · separación breadcrumb/título 24px</p>
+        <p class="text-mono">Hero de servicio · conserva el patrón flexible y añade descripción de 18px y CTA blanco; el patrón crece con la altura total del contenido</p>
+        <p class="text-mono">Tarjeta de solución · imagen cuadrada · separación vertical 24px · título 32px · descripción 17px/150% · botón Geist Mono 15px con padding 10px × 14px · grilla desktop de tres columnas con gap 24px</p>
+        <p class="text-mono">Catálogo de productos · encabezado dinámico · tabs transparentes de 15px con padding 10px × 14px, gap 8px y borde inferior Blue 600 de 3px en el estado activo · el filtro Postes/Torres se muestra sólo para Acero estructural · tarjetas completas clickeables con scramble únicamente en “Ver producto” · imagen cuadrada con zoom y desplazamiento sutil al hover · categoría, título 32px, descripción 17px y enlace con flecha Lucide · grilla desktop de cuatro columnas</p>
+        <p class="text-mono">Modal de producto · panel lateral derecho de 760px · overlay Blue 800 al 40% con blur de 8px · superficie Gray 200 · radio 24px · padding y separación de 40px · navegación circular entre todas las familias</p>
+        <p class="text-mono">Proyectos · sección Gray 200 con padding vertical de 137px · proyecto destacado con imagen de 53% y panel Blue 800 superpuesto · métricas con borde White al 20% · tarjetas fotográficas de 453 × 613px en tres columnas y panel inferior negro al 80% · toda la tarjeta es clickeable y su hover aplica scramble únicamente al CTA</p>
+        <p class="text-mono">Detalle de proyecto · hero de 100vh con ficha técnica inferior en cuatro columnas · sección Gray 200 con padding vertical de 137px · galería asimétrica de dos columnas para dos o tres imágenes y bloque final Blue 800 con CTA</p>
+        <p class="text-mono">Header · barra flotante de 65px con margen superior de 24px · fondo translúcido y blur de 12px · navegación Geist Mono de 15px · variante blanca sobre fondos oscuros y variante Blue 600 con logo azul sobre White, Gray 200 y Gray 300</p>
+        <p class="text-mono">Detalle de servicio · fondo Gray 100 · padding vertical 137px · dos columnas con gap 24px · texto e imagen adaptable · grupos de beneficios con separación de 40px</p>
+        <p class="text-mono">FAQ y footer · componentes compartidos renderizados en Home y Nosotros · una sola fuente de contenido y estructura</p>
+        <p class="text-mono">Menú principal · posición fixed y sin fondo añadido durante el scroll · sobre White, Gray 100 y Gray 200 usa logo blue, textos Blue 600 y contenedor Gray 200 sólido · sobre fondos blue usa logo y textos blancos, contenedor Blue 800 y CTA White con texto Blue 600 · en hero y otros fondos oscuros conserva el contenedor negro 15% · logo independiente + grupo de navegación · radio 10px · gap 16px · padding 2px 2px 2px 14px · mobile: íconos Lucide Menu/X de 32px</p>
+        <div class="styleguide__code-snippet">
+          <p class="text-mono">Snippet reutilizable · Scramble text</p>
+          <pre><code>import { scrambleText } from "./scripts/scramble-text.js";
+
+scrambleText(element, "Nuevo texto");</code></pre>
+        </div>
+        <p class="styleguide__type-meta">El efecto se aplica automáticamente al entrar y salir del hover de todos los enlaces y botones con texto. Respeta `prefers-reduced-motion` y omite controles que solo contienen íconos.</p>
       </section>
     </main>
   </body>

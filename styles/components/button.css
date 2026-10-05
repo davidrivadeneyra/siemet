@@ -22,7 +22,7 @@
 .button {
   min-height: 2.3125rem;
   padding: 0.4375rem 1rem;
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius-button);
 }
 
 .button--primary,
@@ -44,6 +44,12 @@
   color: var(--color-white);
 }
 
+.button--white {
+  border-color: var(--color-transparent);
+  background: var(--color-white);
+  color: var(--color-blue-600);
+}
+
 .button:hover,
 .icon-button:hover {
   transform: translateY(-1px);
@@ -62,6 +68,11 @@
 .button--bright:hover {
   border-color: var(--color-blue-400);
   background: var(--color-blue-400);
+}
+
+.button--white:hover {
+  border-color: var(--color-transparent);
+  background: var(--color-gray-100);
 }
 
 .button:active,

@@ -36,7 +36,15 @@ body {
 .heading--big { font-size: var(--font-size-title-big); }
 .heading--regular { font-size: var(--font-size-title-regular); }
 .heading--medium { font-size: var(--font-size-title-medium); }
+.heading--feature {
+  font-size: var(--font-size-title-feature);
+  line-height: 1.08;
+}
 .heading--small { font-size: var(--font-size-title-small); }
+.heading--mini {
+  font-size: var(--font-size-title-mini);
+  letter-spacing: 0;
+}
 
 .description-mega {
   color: var(--color-title);
@@ -71,12 +79,6 @@ body {
 .text-mono-medium {
   font-size: var(--font-size-mono-medium);
   line-height: var(--line-height-mono-medium);
-}
-
-@media (max-width: 47.99rem) {
-  .heading--big { font-size: clamp(3rem, 14vw, var(--font-size-title-big)); }
-  .heading--regular { font-size: clamp(2.25rem, 10vw, var(--font-size-title-regular)); }
-  .description-mega { font-size: clamp(3.5rem, 18vw, var(--font-size-description-mega)); }
 }
 
 @view-transition {

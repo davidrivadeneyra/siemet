@@ -1,0 +1,99 @@
+.slider-controller {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  width: 100%;
+  color: var(--color-white);
+}
+
+.slider-controller__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: var(--space-6);
+}
+
+.slider-controller__controls {
+  display: flex;
+}
+
+.slider-controller__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--space-6);
+  height: var(--space-6);
+  padding: var(--space-2);
+  border: 0;
+  background: var(--color-transparent);
+  color: currentColor;
+  cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    border-radius var(--transition-fast);
+}
+
+.slider-controller__button:hover {
+  border-radius: var(--radius-button);
+  background: rgb(255 255 255 / 12%);
+}
+
+.slider-controller__button svg {
+  width: var(--space-4);
+  height: var(--space-4);
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+.slider-controller__count {
+  margin: 0;
+  color: var(--color-gray-100);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-mono-regular);
+  font-weight: var(--font-weight-medium);
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.slider-controller__progress {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  overflow: hidden;
+  background: rgb(255 255 255 / 40%);
+}
+
+.slider-controller__progress span {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--color-white);
+  transform: scaleX(0);
+  transform-origin: left;
+  will-change: transform;
+}
+
+.slider-controller--blue {
+  color: var(--color-blue-800);
+}
+
+.slider-controller--blue .slider-controller__button:hover {
+  background: color-mix(in srgb, var(--color-blue-800) 10%, transparent);
+}
+
+.slider-controller--blue .slider-controller__count {
+  color: var(--color-blue-800);
+}
+
+.slider-controller--blue .slider-controller__progress {
+  background: color-mix(in srgb, var(--color-blue-800) 40%, transparent);
+}
+
+.slider-controller--blue .slider-controller__progress span {
+  background: var(--color-blue-800);
+}

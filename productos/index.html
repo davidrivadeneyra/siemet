@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Productos SIEMET de acero estructural y protección atmosférica." />
+    <title>Productos | SIEMET</title>
+    <link rel="icon" href="/assets/ico/ico-siemet.ico" sizes="any" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.2.3/dist/lenis.css" />
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/pages/home.css" />
+    <link rel="stylesheet" href="/styles/pages/products.css" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.2.3/dist/lenis.min.js"></script>
+    <script src="/scripts/main.js" type="module"></script>
+  </head>
+  <body class="products-page">
+    <a class="skip-link" href="#main-content">Saltar al contenido</a>
+
+    <header class="site-header">
+      <a class="site-header__brand" href="/" aria-label="SIEMET, inicio">
+        <img class="site-header__logo site-header__logo--white" src="/assets/brand/logo-siemet-white.svg" alt="SIEMET" />
+        <img class="site-header__logo site-header__logo--blue" src="/assets/brand/logo-siemet-blue.svg" alt="" aria-hidden="true" />
+      </a>
+      <div class="site-header__menu">
+        <nav class="site-nav" aria-label="Navegación principal">
+          <a href="/nosotros/">Nosotros</a>
+          <a href="/soluciones/">Soluciones</a>
+          <a href="/productos/" aria-current="page">Productos</a>
+          <a href="/recursos/">Recursos</a>
+          <a href="/proyectos/">Proyectos</a>
+          <a href="#contacto">Contacto</a>
+          <a href="/blog/">Blog</a>
+        </nav>
+        <a class="button button--primary site-header__cta" href="https://wa.me/51942676263?text=Hola%2C%20quiero%20cotizar%20un%20proyecto%20con%20SIEMET." target="_blank" rel="noopener noreferrer">Cotiza un proyecto</a>
+      </div>
+      <details class="mobile-menu">
+        <summary aria-label="Abrir menú">
+          <svg class="lucide lucide-menu mobile-menu__open" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M4 6h16M4 18h16" /></svg>
+          <svg class="lucide lucide-x mobile-menu__close" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12" /></svg>
+        </summary>
+        <nav aria-label="Navegación móvil">
+          <a href="/nosotros/">Nosotros</a>
+          <a href="/soluciones/">Soluciones</a>
+          <a href="/productos/" aria-current="page">Productos</a>
+          <a href="/recursos/">Recursos</a>
+          <a href="/proyectos/">Proyectos</a>
+          <a href="#contacto">Contacto</a>
+          <a href="/blog/">Blog</a>
+        </nav>
+      </details>
+    </header>
+
+    <main id="main-content">
+      <section class="page-hero page-hero--service" aria-labelledby="products-title" data-header-theme="dark">
+        <img class="page-hero__image" src="/assets/images/products/hero.avif" alt="Productos metálicos fabricados por SIEMET" />
+        <div class="page-hero__veil" aria-hidden="true"></div>
+        <div class="page-hero__content">
+          <span class="diagonal-lines diagonal-lines--white" aria-hidden="true"></span>
+          <div class="page-hero__copy">
+            <p class="page-hero__breadcrumb text-mono"><a href="/">Inicio</a> <span aria-hidden="true">&gt;</span> Productos</p>
+            <div class="page-hero__main">
+              <h1 class="heading heading--big" id="products-title">Productos</h1>
+              <div class="page-hero__description">
+                <p class="text-body">Todo lo que necesitas para tu proyecto.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="products-catalog" aria-labelledby="products-catalog-title" data-header-theme="light" data-products>
+        <div class="products-catalog__inner">
+          <div class="products-catalog__heading">
+            <h2 class="heading heading--regular" id="products-catalog-title" data-products-heading>Acero estructural</h2>
+            <p class="text-body" data-products-description>Postes y torres de acero para telecomunicaciones, energía, iluminación e industria.</p>
+          </div>
+          <div class="products-catalog__controls">
+            <div class="products-category-tabs" role="tablist" aria-label="Familias de productos">
+              <button class="products-category-tab is-current" id="products-tab-steel" type="button" role="tab" aria-selected="true" aria-controls="products-steel" data-products-category="steel" data-products-title="Acero estructural" data-products-description-copy="Postes y torres de acero para telecomunicaciones, energía, iluminación e industria." data-no-scramble>Acero estructural</button>
+              <button class="products-category-tab" id="products-tab-atmospheric" type="button" role="tab" aria-selected="false" aria-controls="products-atmospheric" tabindex="-1" data-products-category="atmospheric" data-products-title="Protección atmosférica" data-products-description-copy="Sistemas de protección contra descargas atmosféricas y dispositivos de monitoreo." data-no-scramble>Protección atmosférica</button>
+            </div>
+            <div class="products-filters" aria-label="Filtrar acero estructural" data-products-filters>
+              <button class="products-filter is-current" type="button" aria-pressed="true" data-products-filter="postes">Postes</button>
+              <button class="products-filter" type="button" aria-pressed="false" data-products-filter="torres">Torres</button>
+            </div>
+          </div>
+
+          <div class="products-panel" id="products-steel" role="tabpanel" aria-labelledby="products-tab-steel" data-products-panel="steel">
+            <div class="products-grid">
+          <article class="product-card" data-product-group="postes">
+            <img class="product-card__image" src="/assets/images/products/cards/postes-conicos-hexagonales.webp" alt="Postes cónicos de sección hexagonal" loading="lazy" />
+            <div class="product-card__body">
+              <p class="product-card__label">Postes</p>
+              <div class="product-card__copy">
+                <h2 class="heading heading--medium">Postes cónicos hexagonales</h2>
+                <p class="text-body">Sección hexagonal, alta resistencia y óptimo desempeño estructural.</p>
+                <a class="product-card__link" href="/productos/postes-conicos-hexagonales/">Ver producto <svg class="lucide lucide-arrow-up-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-group="postes">
+            <img class="product-card__image" src="/assets/images/products/cards/postes-conicos-octogonales.webp" alt="Postes cónicos de sección octogonal" loading="lazy" />
+            <div class="product-card__body">
+              <p class="product-card__label">Postes</p>
+              <div class="product-card__copy">
+                <h2 class="heading heading--medium">Postes cónicos octogonales</h2>
+                <p class="text-body">Sección octogonal, versatilidad en alturas y cargas.</p>
+                <a class="product-card__link" href="/productos/postes-conicos-octogonales/">Ver producto <svg class="lucide lucide-arrow-up-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-group="postes">
+            <img class="product-card__image" src="/assets/images/products/cards/postes-conicos-circulares.webp" alt="Postes cónicos de sección circular" loading="lazy" />
+            <div class="product-card__body">
+              <p class="product-card__label">Postes</p>
+              <div class="product-card__copy">
+                <h2 class="heading heading--medium">Postes cónicos circulares</h2>
+                <p class="text-body">Diseño aerodinámico para aplicaciones de alumbrado.</p>
+                <a class="product-card__link" href="/productos/postes-conicos-circulares/">Ver producto <svg class="lucide lucide-arrow-up-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-group="postes">
+            <img class="product-card__image" src="/assets/images/products/cards/postes-conicos-cuadrados.webp" alt="Postes cónicos de sección cuadrada" loading="lazy" />
+            <div class="product-card__body">
+              <p class="product-card__label">Postes</p>
+              <div class="product-card__copy">
+                <h2 class="heading heading--medium">Postes cónicos cuadrados</h2>
+                <p class="text-body">Sección cuadrada, óptima estética y funcionalidad.</p>
+                <a class="product-card__link" href="/productos/postes-conicos-cuadrados/">Ver producto <svg class="lucide lucide-arrow-up-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-group="postes">
+            <img class="product-card__image" src="/assets/images/products/cards/postes-redondos-rectos.webp" alt="Postes rectos de sección circular" loading="lazy" />
+            <div class="product-card__body">
+              <p class="product-card__label">Postes</p>
+              <div class="product-card__copy">
+                <h2 class="heading heading--medium">Postes redondos rectos</h2>
+                <p class="text-body">Postes rectos de sección circular para múltiples aplicaciones.</p>
+                <a class="product-card__link" href="/productos/postes-redondos-rectos/">Ver producto <svg class="lucide lucide-arrow-up-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-group="postes">
+            <img class="product-card__image" src="/assets/images/products/cards/postes-cuadrados-rectos.webp" alt="Postes rectos de sección cuadrada" loading="lazy" />
+            <div class="product-card__body">
+              <p class="product-card__label">Postes</p>
+              <div class="product-card__copy">
+                <h2 class="heading heading--medium">Postes cuadrados rectos</h2>
+                <p class="text-body">Postes rectos de sección cuadrada para aplicaciones industriales.</p>
+                <a class="product-card__link" href="/productos/postes-cuadrados-rectos/">Ver producto <svg class="lucide lucide-arrow-up-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-group="postes">
+            <img class="product-card__image" src="/assets/images/products/cards/postes-monopolos.webp" alt="Poste monopolo con equipamiento de telecomunicaciones" loading="lazy" />
+            <div class="product-card__body">
+              <p class="product-card__label">Postes</p>
+              <div class="product-card__copy">
+                <h2 class="heading heading--medium">Postes monopolos</h2>
+                <p class="text-body">Solución integral para antenas y equipamiento de telecomunicaciones.</p>
+                <a class="product-card__link" href="/productos/postes-monopolos/">Ver producto <svg class="lucide lucide-arrow-up-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-group="postes">
+            <img class="product-card__image" src="/assets/images/products/cards/postes-publicitarios.webp" alt="Poste publicitario de gran formato" loading="lazy" />
+            <div class="product-card__body">
+              <p class="product-card__label">Postes</p>
+              <div class="product-card__copy">
+                <h2 class="heading heading--medium">Postes publicitarios</h2>
+                <p class="text-body">Diseñados para señalización y publicidad exterior.</p>
+                <a class="product-card__link" href="/productos/postes-publicitarios/">Ver producto <svg class="lucide lucide-arrow-up-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-group="torres" hidden>
+            <img class="product-card__image" src="/assets/images/products/cards/torre-autosoportada-cuadrada.webp" alt="Torre autosoportada de sección cuadrada" loading="lazy" />
+            <div class="product-card__body">
+              <p class="product-card__label">Torres</p>
+              <div class="product-card__copy">
+                <h2 class="heading heading--medium">Torre autosoportada cuadrada</h2>
+                <p class="text-body">Estructura cuadrada de alta resistencia y estabilidad.</p>
+                <a class="product-card__link" href="/productos/torre-autosoportada-cuadrada/">Ver producto <svg class="lucide lucide-arrow-up-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-group="torres" hidden>
+            <img class="product-card__image" src="/assets/images/products/cards/torre-autosoportada-triangular.webp" alt="Torre autosoportada de sección triangular" loading="lazy" />
+            <div class="product-card__body">
+              <p class="product-card__label">Torres</p>
+              <div class="product-card__copy">
+                <h2 class="heading heading--medium">Torre autosoportada triangular</h2>
+                <p class="text-body">Estructura triangular, óptima para diversas aplicaciones.</p>
+                <a class="product-card__link" href="/productos/torre-autosoportada-triangular/">Ver producto <svg class="lucide lucide-arrow-up-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-group="torres" hidden>
+            <img class="product-card__image" src="/assets/images/products/cards/torre-ventada.webp" alt="Torre ventada instalada en una zona de montaña" loading="lazy" />
+            <div class="product-card__body">
+              <p class="product-card__label">Torres</p>
+              <div class="product-card__copy">
+                <h2 class="heading heading--medium">Torre ventada</h2>
+                <p class="text-body">Torre con tensores para grandes alturas y seguridad.</p>
+                <a class="product-card__link" href="/productos/torre-ventada/">Ver producto <svg class="lucide lucide-arrow-up-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-group="torres" hidden>
+            <img class="product-card__image" src="/assets/images/products/cards/torre-abatible.webp" alt="Torre abatible durante su instalación" loading="lazy" />
+            <div class="product-card__body">
+              <p class="product-card__label">Torres</p>
+              <div class="product-card__copy">
+                <h2 class="heading heading--medium">Torre abatible</h2>
+                <p class="text-body">Sistema abatible para fácil instalación y mantenimiento.</p>
+                <a class="product-card__link" href="/productos/torre-abatible/">Ver producto <svg class="lucide lucide-arrow-up-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg></a>
+              </div>
+            </div>
+          </article>
+            </div>
+          </div>
+
+          <div class="products-panel" id="products-atmospheric" role="tabpanel" aria-labelledby="products-tab-atmospheric" data-products-panel="atmospheric" hidden>
+            <div class="products-grid">
+          <article class="product-card product-card--atmospheric">
+            <img class="product-card__image" src="/assets/images/products/cards/pdc30.webp" alt="Pararrayos PDC30" loading="lazy" />
+            <div class="product-card__body">
+              <p class="product-card__label">Protección atmosférica</p>
+              <div class="product-card__copy">
+                <h2 class="heading heading--medium">PDC30</h2>
+                <p class="text-body">Pararrayos PDC de 30 μs.</p>
+                <a class="product-card__link" href="/productos/pdc30/">Ver producto <svg class="lucide lucide-arrow-up-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card product-card--atmospheric">
+            <img class="product-card__image" src="/assets/images/products/cards/pdc60.webp" alt="Pararrayos PDC60" loading="lazy" />
+            <div class="product-card__body">
+              <p class="product-card__label">Protección atmosférica</p>
+              <div class="product-card__copy">
+                <h2 class="heading heading--medium">PDC60</h2>
+                <p class="text-body">Pararrayos PDC de 60 μs.</p>
+                <a class="product-card__link" href="/productos/pdc60/">Ver producto <svg class="lucide lucide-arrow-up-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card product-card--atmospheric">
+            <img class="product-card__image" src="/assets/images/products/cards/franklin-tetrapuntal.webp" alt="Punta captadora Franklin tetrapuntal" loading="lazy" />
+            <div class="product-card__body">
+              <p class="product-card__label">Protección atmosférica</p>
+              <div class="product-card__copy">
+                <h2 class="heading heading--medium">Franklin tetrapuntal</h2>
+                <p class="text-body">Punta captadora de 4 puntas.</p>
+                <a class="product-card__link" href="/productos/franklin-tetrapuntal/">Ver producto <svg class="lucide lucide-arrow-up-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card product-card--atmospheric">
+            <img class="product-card__image" src="/assets/images/products/cards/franklin-pentapuntal.webp" alt="Punta captadora Franklin pentapuntal" loading="lazy" />
+            <div class="product-card__body">
+              <p class="product-card__label">Protección atmosférica</p>
+              <div class="product-card__copy">
+                <h2 class="heading heading--medium">Franklin pentapuntal</h2>
+                <p class="text-body">Punta captadora de 5 puntas.</p>
+                <a class="product-card__link" href="/productos/franklin-pentapuntal/">Ver producto <svg class="lucide lucide-arrow-up-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card product-card--atmospheric">
+            <img class="product-card__image" src="/assets/images/products/cards/punta-franklin.webp" alt="Punta captadora Franklin" loading="lazy" />
+            <div class="product-card__body">
+              <p class="product-card__label">Protección atmosférica</p>
+              <div class="product-card__copy">
+                <h2 class="heading heading--medium">Punta Franklin</h2>
+                <p class="text-body">Punta captadora.</p>
+                <a class="product-card__link" href="/productos/punta-franklin/">Ver producto <svg class="lucide lucide-arrow-up-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card product-card--atmospheric">
+            <img class="product-card__image" src="/assets/images/products/cards/contador-digital.webp" alt="Contador digital de descargas FDLSC-10" loading="lazy" />
+            <div class="product-card__body">
+              <p class="product-card__label">Protección atmosférica</p>
+              <div class="product-card__copy">
+                <h2 class="heading heading--medium">Contador Digital</h2>
+                <p class="text-body">Contador digital de descargas FDLSC-10.</p>
+                <a class="product-card__link" href="/productos/contador-digital/">Ver producto <svg class="lucide lucide-arrow-up-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg></a>
+              </div>
+            </div>
+          </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <dialog class="product-modal" id="product-modal" aria-labelledby="product-modal-title" aria-describedby="product-modal-description" data-product-modal>
+      <div class="product-modal__header">
+        <p class="product-modal__label">Productos</p>
+        <button class="product-modal__close" type="button" aria-label="Cerrar detalle del producto" data-product-modal-close data-no-scramble>
+          <svg class="lucide lucide-x" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12" /></svg>
+        </button>
+      </div>
+
+      <img class="product-modal__image" alt="" data-product-modal-image />
+
+      <div class="product-modal__main">
+        <div class="product-modal__content">
+          <div class="product-modal__copy">
+            <p class="product-modal__breadcrumb">Productos <span aria-hidden="true">&gt;</span> <span data-product-modal-family>Acero estructural</span></p>
+            <h2 class="product-modal__title" id="product-modal-title" aria-live="polite" data-product-modal-title></h2>
+            <p class="product-modal__description" id="product-modal-description" data-product-modal-description></p>
+          </div>
+          <a class="button button--primary product-modal__quote" href="/contacto/">Cotizar este producto</a>
+        </div>
+
+        <div class="product-modal__navigation" aria-label="Navegación entre productos">
+          <div class="product-modal__buttons">
+            <button class="product-modal__arrow" type="button" aria-label="Producto anterior" data-product-modal-previous data-no-scramble>
+              <svg class="lucide lucide-chevron-left" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>
+            </button>
+            <button class="product-modal__arrow" type="button" aria-label="Producto siguiente" data-product-modal-next data-no-scramble>
+              <svg class="lucide lucide-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+            </button>
+          </div>
+          <p class="product-modal__counter"><span data-product-modal-current>01</span> de <span data-product-modal-total>18</span></p>
+        </div>
+      </div>
+    </dialog>
+
+    <div data-shared-footer></div>
+  </body>
+</html>
