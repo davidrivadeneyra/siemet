@@ -37,3 +37,4 @@ tema propio de WordPress. Los tokens iniciales provienen del archivo de Figma
 “Siemet Web” y están documentados en `estilos-figma-siemet.md`. Los dos estilos
 locales que Figma denomina `Blue/600` se exponen como `--color-blue-600` y
 `--color-blue-600-bright` para evitar referencias ambiguas en el código.
+# siemet
