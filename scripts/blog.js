@@ -1,6 +1,8 @@
 import { blogCategories, blogPosts, getBlogPost, getPostUrl } from "./blog-data.js";
+import { scrambleText } from "./scramble-text.js";
 
 const arrowIcon = `<svg class="lucide lucide-arrow-up-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>`;
+const HOVER_QUERY = "(hover: hover) and (pointer: fine)";
 
 const formatDate = (date) =>
   new Intl.DateTimeFormat("es-PE", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(`${date}T00:00:00Z`));
@@ -9,18 +11,37 @@ const categoryKey = (value) => value.normalize("NFD").replace(/[\u0300-\u036f]/g
 
 const renderCard = (post) => `
   <article class="blog-card" data-blog-card data-categories="${post.categories.map(categoryKey).join(" ")}">
-    <a class="blog-card__media" href="${getPostUrl(post)}" aria-label="Leer ${post.title}">
+    <a class="blog-card__media" href="${getPostUrl(post)}" aria-label="Leer ${post.title}" data-no-scramble>
       <img src="${post.image}" alt="${post.imageAlt}" loading="lazy" />
     </a>
     <div class="blog-card__body">
       <p class="blog-card__category eyebrow"><span class="eyebrow__marker" aria-hidden="true"></span>${post.categories[0]}</p>
       <div class="blog-card__copy">
-        <h2 class="heading heading--small"><a href="${getPostUrl(post)}">${post.title}</a></h2>
+        <h2 class="heading heading--small"><a href="${getPostUrl(post)}" data-no-scramble>${post.title}</a></h2>
         <p class="text-body">${post.excerpt}</p>
-        <a class="blog-card__link" href="${getPostUrl(post)}">Leer artículo ${arrowIcon}</a>
+        <a class="blog-card__link" href="${getPostUrl(post)}" data-no-scramble>Leer artículo ${arrowIcon}</a>
       </div>
     </div>
   </article>`;
+
+function initBlogCard(card) {
+  const link = card.querySelector(".blog-card__link");
+  if (!link) return;
+
+  card.classList.add("is-clickable");
+
+  card.addEventListener("click", (event) => {
+    if (event.target.closest("a, button")) return;
+    link.click();
+  });
+
+  if (window.matchMedia(HOVER_QUERY).matches) {
+    card.addEventListener("pointerenter", () => scrambleText(link));
+    card.addEventListener("pointerleave", () => scrambleText(link));
+  }
+
+  link.addEventListener("focus", () => scrambleText(link));
+}
 
 function initBlogIndex() {
   const grid = document.querySelector("[data-blog-grid]");
@@ -28,6 +49,7 @@ function initBlogIndex() {
   if (!grid || !filters) return;
 
   grid.innerHTML = blogPosts.map(renderCard).join("");
+  grid.querySelectorAll("[data-blog-card]").forEach(initBlogCard);
   filters.innerHTML = ["Todos los artículos", ...blogCategories]
     .map((category, index) => `<button class="blog-filter${index === 0 ? " is-active" : ""}" type="button" data-category="${index === 0 ? "all" : categoryKey(category)}" aria-pressed="${index === 0}">${category}</button>`)
     .join("");
@@ -85,6 +107,7 @@ function initBlogPost() {
     ...post.sections.map(([title], index) => `<a href="#seccion-${index + 1}" data-toc-link>${index + 1}. ${title}</a>`),
   ].join("");
   document.querySelector("[data-related-posts]").innerHTML = renderRelated(post);
+  document.querySelectorAll("[data-related-posts] [data-blog-card]").forEach(initBlogCard);
 
   document.querySelectorAll("[data-share]").forEach((link) => {
     const target = link.dataset.share;

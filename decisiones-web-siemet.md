@@ -29,6 +29,17 @@ Crear una web corporativa para SIEMET completamente personalizada. La primera ve
 - Blog
 - Contacto
 
+## Posición de los hero de páginas interiores
+
+- La página `/nosotros` es la referencia de composición para los hero de las páginas interiores.
+- El bloque de contenido se posiciona en la zona superior izquierda del hero, nunca alineado al borde inferior.
+- En desktop y tablet se utiliza un padding de `128px` en el eje vertical y `64px` en el eje horizontal.
+- En mobile, el inicio vertical del contenido se calcula sumando la altura del header y una separación de `40px`; el gutter lateral es de `20px`.
+- El patrón de líneas diagonales se ubica a la izquierda del bloque completo de contenido.
+- Dentro del bloque, el breadcrumb aparece primero y el título inmediatamente debajo, con una separación de `24px`.
+- Cuando el hero incluye descripción o CTA, ambos se colocan debajo del título dentro de `.page-hero__main`; esta ampliación no cambia la alineación superior del bloque.
+- Las páginas de Blog y los posts deben respetar esta misma posición, aunque adapten el ancho del contenido a la longitud del título.
+
 ## Soluciones
 
 Cada solución tendrá una página individual. El contenido inicial contempla:

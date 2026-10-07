@@ -1,3 +1,5 @@
+import { getBlogPost } from "./blog-data.js";
+
 const STORAGE_KEY = "siemet:page-transition";
 const TRANSITION_DURATION = 850;
 const ENTER_DELAY = 280;
@@ -44,6 +46,10 @@ const getPageName = (link, url) => {
   if (explicitName) return explicitName;
 
   const pathname = normalizePath(url.pathname);
+  if (pathname === "/blog/post/") {
+    return getBlogPost(url.searchParams.get("slug")).title;
+  }
+
   const knownName = pageNames.get(pathname);
   if (knownName) return knownName;
 
