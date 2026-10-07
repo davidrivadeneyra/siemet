@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <script src="/scripts/page-transition-boot.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Artículo técnico de SIEMET." />
+    <title>Blog | SIEMET</title>
+    <link rel="icon" href="/assets/ico/ico-siemet.ico" sizes="any" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.2.3/dist/lenis.css" />
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/pages/home.css" />
+    <link rel="stylesheet" href="/styles/pages/blog.css" />
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.2.3/dist/lenis.min.js"></script>
+    <script src="/scripts/main.js" type="module"></script>
+    <script src="/scripts/blog.js" type="module"></script>
+  </head>
+  <body class="blog-post-page" data-blog-post>
+    <a class="skip-link" href="#main-content">Saltar al contenido</a>
+    <div data-shared-header data-active-page="blog"></div>
+    <main id="main-content">
+      <section class="page-hero blog-post-hero" aria-labelledby="post-title" data-header-theme="dark">
+        <img class="page-hero__image" data-post-hero-image src="/assets/images/blog/evaluacion-estructura.webp" alt="" />
+        <div class="page-hero__veil" aria-hidden="true"></div>
+        <div class="page-hero__content">
+          <span class="diagonal-lines diagonal-lines--white" aria-hidden="true"></span>
+          <div class="page-hero__copy">
+            <p class="page-hero__breadcrumb text-mono"><a href="/">Inicio</a> <span aria-hidden="true">&gt;</span> <a href="/blog/">Blog</a> <span aria-hidden="true">&gt;</span> <span data-post-breadcrumb></span></p>
+            <h1 class="heading heading--big" id="post-title" data-post-title></h1>
+            <p class="blog-post-hero__date text-mono" data-post-date></p>
+          </div>
+        </div>
+      </section>
+      <div class="article-layout" data-header-theme="light">
+        <aside class="article-sidebar article-sidebar--left" aria-label="Contenido del artículo">
+          <p class="eyebrow"><span class="eyebrow__marker" aria-hidden="true"></span>Contenido</p>
+          <nav class="article-toc" data-post-toc></nav>
+        </aside>
+        <article class="article-content">
+          <section class="article-intro" id="inicio">
+            <div class="article-tags" data-post-tags></div>
+            <h2 class="heading heading--regular">Lo esencial de este artículo</h2>
+            <p class="text-body" data-post-excerpt></p>
+            <ul class="article-essentials" data-post-essentials></ul>
+          </section>
+          <div data-post-sections></div>
+        </article>
+        <aside class="article-sidebar article-sidebar--right" aria-label="Acciones del artículo">
+          <section class="article-cta">
+            <img src="/assets/images/blog/hero-post.webp" alt="Especialistas de SIEMET revisando una solución estructural" />
+            <div class="article-cta__veil" aria-hidden="true"></div>
+            <div class="article-cta__content">
+              <h2 class="heading heading--small">¿Necesitas evaluar tu proyecto?</h2>
+              <p class="text-body">Conversemos sobre las condiciones reales de tu estructura.</p>
+              <a class="button button--white" href="https://wa.me/51942676263?text=Hola%2C%20quiero%20evaluar%20un%20proyecto%20con%20SIEMET." target="_blank" rel="noopener noreferrer">Hablar con un especialista</a>
+            </div>
+          </section>
+          <section class="article-share" aria-labelledby="share-title">
+            <h2 class="heading heading--mini" id="share-title">Compartir artículo</h2>
+            <div class="article-share__links">
+              <a data-share="facebook" href="#" target="_blank" rel="noopener noreferrer">Facebook <svg class="lucide lucide-arrow-up-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
+              <a data-share="x" href="#" target="_blank" rel="noopener noreferrer">X <svg class="lucide lucide-arrow-up-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
+              <a data-share="linkedin" href="#" target="_blank" rel="noopener noreferrer">LinkedIn <svg class="lucide lucide-arrow-up-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
+            </div>
+          </section>
+        </aside>
+      </div>
+      <section class="related-posts" aria-labelledby="related-title" data-header-theme="light">
+        <div class="related-posts__heading">
+          <p class="eyebrow"><span class="eyebrow__marker" aria-hidden="true"></span>Continúa leyendo</p>
+          <h2 class="heading heading--regular" id="related-title">Artículos relacionados</h2>
+        </div>
+        <div class="blog-grid blog-grid--related" data-related-posts></div>
+      </section>
+    </main>
+    <div data-shared-footer></div>
+  </body>
+</html>

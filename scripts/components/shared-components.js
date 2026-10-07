@@ -5,11 +5,12 @@ const chevronIcon = `
 `;
 
 const navigationItems = [
-  ["contacto", "Contacto", "#contacto"],
   ["nosotros", "Nosotros", "/nosotros/"],
   ["soluciones", "Soluciones", "/soluciones/"],
   ["productos", "Productos", "/productos/"],
   ["proyectos", "Proyectos", "/proyectos/"],
+  ["contacto", "Contacto", "#contacto"],
+  ["blog", "Blog", "/blog/"],
 ];
 
 const createNavigationLinks = (activePage) =>

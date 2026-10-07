@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <script src="/scripts/page-transition-boot.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Ideas y criterios de SIEMET sobre ingeniería, estructuras metálicas y protección atmosférica." />
+    <title>Blog | SIEMET</title>
+    <link rel="icon" href="/assets/ico/ico-siemet.ico" sizes="any" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.2.3/dist/lenis.css" />
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/pages/home.css" />
+    <link rel="stylesheet" href="/styles/pages/blog.css" />
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.2.3/dist/lenis.min.js"></script>
+    <script src="/scripts/main.js" type="module"></script>
+    <script src="/scripts/blog.js" type="module"></script>
+  </head>
+  <body class="blog-page">
+    <a class="skip-link" href="#main-content">Saltar al contenido</a>
+    <div data-shared-header data-active-page="blog"></div>
+    <main id="main-content">
+      <section class="page-hero blog-hero" aria-labelledby="blog-title" data-header-theme="dark">
+        <img class="page-hero__image" src="/assets/images/blog/hero-blog.avif" alt="Estructuras metálicas de SIEMET en un entorno industrial" />
+        <div class="page-hero__veil" aria-hidden="true"></div>
+        <div class="page-hero__content">
+          <span class="diagonal-lines diagonal-lines--white" aria-hidden="true"></span>
+          <div class="page-hero__copy">
+            <p class="page-hero__breadcrumb text-mono"><a href="/">Inicio</a> <span aria-hidden="true">&gt;</span> Blog</p>
+            <h1 class="heading heading--big" id="blog-title">Blog</h1>
+          </div>
+        </div>
+      </section>
+      <section class="blog-index" data-header-theme="light" aria-labelledby="blog-index-title">
+        <div class="blog-index__intro">
+          <p class="eyebrow"><span class="eyebrow__marker" aria-hidden="true"></span>Conocimiento técnico</p>
+          <h2 class="heading heading--regular" id="blog-index-title">Ideas y criterios para proyectos que exigen más</h2>
+          <p class="text-body">Ingeniería, estructuras metálicas y protección atmosférica explicadas con claridad.</p>
+        </div>
+        <div class="blog-filters" data-blog-filters aria-label="Filtrar artículos por categoría"></div>
+        <div class="blog-grid" data-blog-grid></div>
+      </section>
+    </main>
+    <div data-shared-footer></div>
+  </body>
+</html>
