@@ -1,0 +1,80 @@
+.project-cta-shell {
+  width: 100%;
+  padding: 3rem;
+  background: var(--color-gray-200);
+}
+
+.project-cta {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 80vh;
+  min-height: 32rem;
+  align-items: flex-end;
+  padding: var(--space-16) 3rem;
+  overflow: hidden;
+  isolation: isolate;
+  background: #070910;
+  border-radius: var(--radius-button);
+}
+
+.project-cta__image {
+  position: absolute;
+  z-index: -1;
+  top: -12.5%;
+  left: 0;
+  width: 100%;
+  height: 125%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  will-change: transform;
+}
+
+.project-cta__content {
+  display: flex;
+  align-items: stretch;
+  gap: var(--space-5);
+  width: min(50.375rem, 100%);
+}
+
+.project-cta__copy {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.project-cta .heading {
+  color: var(--color-white);
+  font-size: var(--font-size-title-page-hero);
+}
+
+.project-cta .text-body {
+  color: var(--color-white);
+  font-size: 1.125rem;
+}
+
+.project-cta .button {
+  min-height: 2.3125rem;
+  padding: 0.625rem 0.875rem;
+  font-size: var(--font-size-mono-breadcrumb);
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+@media (max-width: 47.99rem) {
+  .project-cta-shell {
+    padding: var(--page-gutter);
+  }
+
+  .project-cta {
+    min-height: 30rem;
+    padding: var(--space-10) var(--page-gutter);
+  }
+
+  .project-cta .text-body {
+    font-size: var(--font-size-description-regular);
+  }
+}

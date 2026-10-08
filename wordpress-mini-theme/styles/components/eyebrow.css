@@ -1,0 +1,21 @@
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-4);
+  width: fit-content;
+  color: var(--color-blue-800);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-mono-regular);
+  font-weight: var(--font-weight-medium);
+  line-height: normal;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.eyebrow__marker {
+  width: 1rem;
+  height: 1rem;
+  flex: 0 0 auto;
+  border-radius: var(--radius-xs);
+  background: var(--color-blue-400);
+}

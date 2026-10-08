@@ -6,9 +6,12 @@ import { initHeroSlideshow } from "./hero-slideshow.js";
 import { initIndustries } from "./industries.js";
 import { initPageTransition } from "./page-transition.js";
 import { initProcess } from "./process.js";
+import { initProjectCta } from "./project-cta.js";
 import { initProducts } from "./products.js";
 import { initProjectCard } from "./projects.js";
+import { initResources } from "./resources.js";
 import { initScrambleTextHovers } from "./scramble-text.js";
+import { initSolutionCard } from "./solutions.js";
 import { initSmoothScroll } from "./smooth-scroll.js";
 import { initTrajectory } from "./trajectory.js";
 
@@ -23,8 +26,11 @@ document.querySelectorAll("[data-faq]").forEach(initFaq);
 document.querySelectorAll("[data-gallery]").forEach(initGallery);
 document.querySelectorAll("[data-industries]").forEach(initIndustries);
 document.querySelectorAll("[data-process]").forEach(initProcess);
+document.querySelectorAll(".project-cta").forEach(initProjectCta);
 document.querySelectorAll("[data-products]").forEach(initProducts);
 document.querySelectorAll(".featured-project, .project-card").forEach(initProjectCard);
+document.querySelectorAll("[data-resources]").forEach(initResources);
+document.querySelectorAll(".solution-card").forEach(initSolutionCard);
 document.querySelectorAll("[data-trajectory]").forEach(initTrajectory);
 initScrambleTextHovers();
 
@@ -37,9 +43,10 @@ if (siteHeader && headerThemeSections.length) {
   const syncHeaderTheme = () => {
     headerThemeFrame = undefined;
     const probeY = siteHeader.getBoundingClientRect().height / 2;
-    const activeSection = headerThemeSections.find((section) => {
+    let activeSection;
+    headerThemeSections.forEach((section) => {
       const bounds = section.getBoundingClientRect();
-      return bounds.top <= probeY && bounds.bottom > probeY;
+      if (bounds.top <= probeY && bounds.bottom > probeY) activeSection = section;
     });
 
     siteHeader.classList.toggle("is-on-light", activeSection?.dataset.headerTheme === "light");

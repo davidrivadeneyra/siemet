@@ -187,6 +187,9 @@ La estructura visual, los componentes, el comportamiento responsive y las animac
 - Las transiciones entre páginas se limitarán a navegación dentro del mismo dominio.
 - Se respetará la preferencia `prefers-reduced-motion`.
 - No será necesario convertir el sitio en una SPA para disponer de transiciones entre documentos compatibles.
+- En WordPress, el título mostrado por la transición no deberá inferirse únicamente desde el `pathname`, porque la configuración de enlaces permanentes puede generar URLs con parámetros como `?post_type=proyecto` o `?proyecto=slug`.
+- Los enlaces generados por las plantillas dinámicas deberán declarar explícitamente el título de destino mediante `data-transition-title`. El script conservará además una resolución de respaldo basada en los parámetros de WordPress y, cuando corresponda, en el título visible de la tarjeta.
+- Se recomendarán enlaces permanentes legibles para la versión pública, pero las transiciones deberán funcionar correctamente tanto con URLs legibles como con enlaces simples.
 
 ## Estado actual
 

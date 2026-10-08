@@ -29,6 +29,7 @@
           <a href="/nosotros/">Nosotros</a>
           <a href="/soluciones/">Soluciones</a>
           <a href="/productos/" aria-current="page">Productos</a>
+          <a href="/recursos/">Recursos</a>
           <a href="/proyectos/">Proyectos</a>
           <a href="#contacto">Contacto</a>
           <a href="/blog/">Blog</a>
@@ -44,6 +45,7 @@
           <a href="/nosotros/">Nosotros</a>
           <a href="/soluciones/">Soluciones</a>
           <a href="/productos/" aria-current="page">Productos</a>
+          <a href="/recursos/">Recursos</a>
           <a href="/proyectos/">Proyectos</a>
           <a href="#contacto">Contacto</a>
           <a href="/blog/">Blog</a>
@@ -311,6 +313,8 @@
           </div>
         </div>
       </section>
+
+      <div data-shared-project-cta></div>
     </main>
 
     <dialog class="product-modal" id="product-modal" aria-labelledby="product-modal-title" aria-describedby="product-modal-description" data-product-modal>
@@ -330,7 +334,14 @@
             <h2 class="product-modal__title" id="product-modal-title" aria-live="polite" data-product-modal-title></h2>
             <p class="product-modal__description" id="product-modal-description" data-product-modal-description></p>
           </div>
-          <a class="button button--primary product-modal__quote" href="/contacto/">Cotizar este producto</a>
+          <div class="product-modal__actions">
+            <a class="button product-modal__quote" href="/contacto/">Cotizar este producto</a>
+            <button class="product-modal__download" type="button" data-product-modal-download>
+              <svg class="lucide lucide-file-down" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5Z" /><polyline points="14 2 14 8 20 8" /><path d="M12 18v-6" /><path d="m9 15 3 3 3-3" /></svg>
+              <span>Descargar ficha</span>
+              <svg class="lucide lucide-download" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12" /><path d="m7 10 5 5 5-5" /><path d="M5 21h14" /></svg>
+            </button>
+          </div>
         </div>
 
         <div class="product-modal__navigation" aria-label="Navegación entre productos">

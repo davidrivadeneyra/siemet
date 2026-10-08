@@ -15,6 +15,32 @@ export function initProducts(root) {
   const productCards = [...root.querySelectorAll(".product-card")];
   const modal = document.querySelector("[data-product-modal]");
 
+  productCards.forEach((card) => {
+    const trigger = card.querySelector(".product-card__link");
+    if (!trigger || trigger.closest(".product-card__actions")) return;
+
+    const labelNode = [...trigger.childNodes].find((node) => node.nodeType === Node.TEXT_NODE);
+    if (labelNode) labelNode.textContent = "Ver más ";
+
+    const actions = document.createElement("div");
+    actions.className = "product-card__actions";
+    trigger.before(actions);
+    actions.append(trigger);
+
+    const downloadButton = document.createElement("button");
+    downloadButton.className = "product-card__download";
+    downloadButton.type = "button";
+    downloadButton.dataset.noScramble = "";
+    downloadButton.setAttribute("aria-label", `Descargar ficha de ${card.querySelector(".heading")?.textContent.trim() ?? "este producto"}`);
+    downloadButton.innerHTML = `
+      <svg class="lucide lucide-file-down" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5Z" /><polyline points="14 2 14 8 20 8" /><path d="M12 18v-6" /><path d="m9 15 3 3 3-3" /></svg>
+      <span>Descargar ficha</span>
+      <svg class="lucide lucide-download" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12" /><path d="m7 10 5 5 5-5" /><path d="M5 21h14" /></svg>
+    `;
+    actions.append(downloadButton);
+    downloadButton.addEventListener("click", (event) => event.stopPropagation());
+  });
+
   let currentFilter = filterButtons.find((button) => button.classList.contains("is-current"))?.dataset.productsFilter ?? "postes";
 
   const selectFilter = (filter) => {
@@ -76,6 +102,7 @@ export function initProducts(root) {
   const closeButton = modal.querySelector("[data-product-modal-close]");
   const previousButton = modal.querySelector("[data-product-modal-previous]");
   const nextButton = modal.querySelector("[data-product-modal-next]");
+  const modalDownload = modal.querySelector("[data-product-modal-download]");
   const products = productCards.map((card) => {
     const panel = card.closest("[data-products-panel]");
     const image = card.querySelector(".product-card__image");
@@ -213,6 +240,7 @@ export function initProducts(root) {
   closeButton?.addEventListener("click", closeModal);
   previousButton?.addEventListener("click", () => animateProductChange(currentProductIndex - 1, -1));
   nextButton?.addEventListener("click", () => animateProductChange(currentProductIndex + 1, 1));
+  modalDownload?.addEventListener("click", (event) => event.stopPropagation());
 
   modal.addEventListener("animationend", (event) => {
     if (event.animationName === "product-modal-enter") modal.classList.remove("is-opening");

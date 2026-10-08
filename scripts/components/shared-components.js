@@ -8,6 +8,7 @@ const navigationItems = [
   ["nosotros", "Nosotros", "/nosotros/"],
   ["soluciones", "Soluciones", "/soluciones/"],
   ["productos", "Productos", "/productos/"],
+  ["recursos", "Recursos", "/recursos/"],
   ["proyectos", "Proyectos", "/proyectos/"],
   ["contacto", "Contacto", "#contacto"],
   ["blog", "Blog", "/blog/"],
@@ -175,6 +176,10 @@ const createFooter = () => `
         </nav>
       </div>
     </div>
+    <div class="site-footer__meta">
+      <p>Diseñado y desarrollado por <a href="https://craftme.studio" target="_blank" rel="noopener noreferrer">Craftme</a></p>
+      <p>© 2026 - Todos los derechos reservados</p>
+    </div>
   </footer>
 `;
 
@@ -217,6 +222,22 @@ const createProcess = () => `
   </section>
 `;
 
+const createProjectCta = () => `
+  <div class="project-cta-shell" data-header-theme="light">
+    <section class="project-cta" aria-labelledby="project-cta-title" data-header-theme="dark">
+      <img class="project-cta__image" src="/assets/images/shared/cta-welding.webp" alt="" loading="lazy" />
+      <div class="project-cta__content">
+        <span class="diagonal-lines diagonal-lines--white" aria-hidden="true"></span>
+        <div class="project-cta__copy">
+          <h2 class="heading" id="project-cta-title">¿Tienes un proyecto?</h2>
+          <p class="text-body">Hablemos de alcance, fabricación y montaje.</p>
+          <a class="button button--white" href="https://wa.me/51942676263?text=Hola%2C%20quiero%20cotizar%20un%20proyecto%20con%20SIEMET." target="_blank" rel="noopener noreferrer">Cotiza un proyecto</a>
+        </div>
+      </div>
+    </section>
+  </div>
+`;
+
 const replacePlaceholder = (placeholder, markup) => {
   const template = document.createElement("template");
   template.innerHTML = markup.trim();
@@ -229,5 +250,6 @@ export function renderSharedComponents() {
   );
   document.querySelectorAll("[data-shared-process]").forEach((placeholder) => replacePlaceholder(placeholder, createProcess()));
   document.querySelectorAll("[data-shared-faq]").forEach((placeholder) => replacePlaceholder(placeholder, createFaq()));
+  document.querySelectorAll("[data-shared-project-cta]").forEach((placeholder) => replacePlaceholder(placeholder, createProjectCta()));
   document.querySelectorAll("[data-shared-footer]").forEach((placeholder) => replacePlaceholder(placeholder, createFooter()));
 }
