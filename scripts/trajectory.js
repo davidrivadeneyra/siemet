@@ -23,6 +23,51 @@ function animateCounter(counter) {
   window.requestAnimationFrame(render);
 }
 
+function initMarqueeDirection(track) {
+  let lastScrollY = window.scrollY;
+  let scrollFrame;
+  let currentDirection = "down";
+
+  const setDirection = (direction) => {
+    if (direction === currentDirection) return;
+
+    const animation = track
+      .getAnimations()
+      .find((candidate) => candidate.animationName === "trajectory-marquee");
+    if (!animation) return;
+
+    const playbackRate = direction === "up" ? -1 : 1;
+    const duration = Number(animation.effect?.getTiming().duration);
+
+    if (playbackRate < 0 && Number.isFinite(duration)) {
+      const currentTime = Number(animation.currentTime) || 0;
+      animation.currentTime = currentTime + duration * 10000;
+    }
+
+    animation.playbackRate = playbackRate;
+    currentDirection = direction;
+  };
+
+  const syncDirection = () => {
+    scrollFrame = undefined;
+    const currentScrollY = window.scrollY;
+    const scrollDelta = currentScrollY - lastScrollY;
+    lastScrollY = currentScrollY;
+
+    if (scrollDelta === 0) return;
+    setDirection(scrollDelta < 0 ? "up" : "down");
+  };
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (scrollFrame) return;
+      scrollFrame = window.requestAnimationFrame(syncDirection);
+    },
+    { passive: true },
+  );
+}
+
 export function initTrajectory(root) {
   const track = root.querySelector("[data-trajectory-track]");
   const group = root.querySelector("[data-trajectory-group]");
@@ -35,6 +80,8 @@ export function initTrajectory(root) {
 
   const counters = [...root.querySelectorAll("[data-counter]")];
   const reducedMotion = window.matchMedia(MOTION_QUERY).matches;
+
+  if (!reducedMotion) initMarqueeDirection(track);
 
   if (reducedMotion || !("IntersectionObserver" in window)) {
     counters.forEach((counter) => setCounterValue(counter, counter.dataset.counterTarget));

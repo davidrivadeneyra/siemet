@@ -17,7 +17,7 @@
   display: flex;
   align-items: stretch;
   width: min(47.125rem, 100%);
-  gap: var(--space-8);
+  gap: var(--space-5);
 }
 
 .blog-index__intro {
@@ -422,7 +422,7 @@
   }
 
   .blog-index__heading-block {
-    gap: var(--space-6);
+    gap: var(--space-4);
   }
 
   .blog-grid,

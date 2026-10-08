@@ -177,7 +177,7 @@ const createFooter = () => `
       </div>
     </div>
     <div class="site-footer__meta">
-      <p>Diseñado y desarrollado por <a href="https://craftme.studio" target="_blank" rel="noopener noreferrer">Craftme</a></p>
+      <p>Diseñado y desarrollado por <a href="https://craftme.studio" target="_blank" rel="noopener noreferrer">Craftme Studio</a></p>
       <p>© 2026 - Todos los derechos reservados</p>
     </div>
   </footer>

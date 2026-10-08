@@ -407,7 +407,7 @@ body {
 }
 
 .trajectory-card {
-  width: clamp(16rem, 20.11vw, 19rem);
+  width: clamp(22rem, 24vw, 28rem);
   flex: 0 0 auto;
   overflow: hidden;
   aspect-ratio: 1;
@@ -454,7 +454,7 @@ body {
 }
 
 .process__inner {
-  gap: var(--space-7);
+  gap: var(--space-5);
 }
 
 .process__heading {
@@ -1013,6 +1013,7 @@ body {
   }
 
   .hero__content {
+    gap: var(--space-4);
     width: 100%;
   }
 
@@ -1026,11 +1027,22 @@ body {
   }
 
   .process__heading {
+    gap: var(--space-4);
     width: 100%;
+  }
+
+  .process__inner {
+    gap: var(--space-4);
   }
 
   .about-gallery__media {
     min-height: 24rem;
+  }
+
+  .about-gallery__content {
+    min-height: 0;
+    height: fit-content;
+    justify-content: flex-start;
   }
 
   .about-gallery__thumbs button {

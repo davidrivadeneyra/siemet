@@ -212,10 +212,6 @@
 }
 
 @media (max-width: 47.99rem) {
-  .project-detail-hero .page-hero__content {
-    gap: var(--space-4);
-  }
-
   .project-detail-hero__sector,
   .project-detail-section-label,
   .project-detail-hero__fact dt,

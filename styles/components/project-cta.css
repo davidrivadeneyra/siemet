@@ -74,6 +74,10 @@
     padding: var(--space-10) var(--page-gutter);
   }
 
+  .project-cta__content {
+    gap: var(--space-4);
+  }
+
   .project-cta .text-body {
     font-size: var(--font-size-description-regular);
   }

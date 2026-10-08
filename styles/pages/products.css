@@ -243,7 +243,7 @@
   padding: var(--space-4);
   border: 0;
   border-radius: 0;
-  background: rgb(0 0 0 / 96%);
+  background: var(--color-blue-800);
   color: var(--color-white);
   align-items: center;
   justify-content: center;
@@ -563,6 +563,21 @@ html.has-product-modal {
   .products-category-tabs,
   .products-filters {
     max-width: 100%;
+  }
+
+  .products-category-tabs {
+    width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .products-category-tab {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
+  .products-filters {
     flex-wrap: wrap;
   }
 

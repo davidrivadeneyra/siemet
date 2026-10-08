@@ -122,16 +122,14 @@
   justify-content: space-between;
   gap: var(--space-5);
   color: rgb(255 255 255 / 60%);
+  font-family: var(--font-sans);
   font-size: 0.875rem;
   line-height: 1.5;
 }
 
-.site-footer__meta p:first-child {
-  font-family: var(--font-mono);
-}
-
 .site-footer__meta a {
   color: inherit;
+  font-family: var(--font-mono);
   text-decoration: none;
 }
 
@@ -150,7 +148,7 @@
   .site-footer {
     padding-top: 5rem;
     padding-bottom: var(--space-8);
-    padding-inline: var(--space-8);
+    padding-inline: 20px;
   }
 
   .site-footer__inner {
