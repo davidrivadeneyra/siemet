@@ -74,7 +74,7 @@ const createFaq = () => `
     </div>
     <div class="container faq__inner">
       <div class="section-heading section-heading--center section-heading--inverse">
-        <p class="text-mono">＋ Preguntas frecuentes</p>
+        <p class="eyebrow"><span class="eyebrow__marker" aria-hidden="true"></span>Preguntas frecuentes</p>
         <h2 class="heading heading--regular" id="faq-title">Preguntas frecuentes</h2>
       </div>
       <div class="faq__list">

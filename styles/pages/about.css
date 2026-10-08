@@ -3,9 +3,12 @@
 }
 
 .about-intro .heading,
-.about-intro .text-body,
 .about-purpose .heading,
-.about-values .heading,
+.about-values .heading {
+  color: var(--color-blue-600);
+}
+
+.about-intro .text-body,
 .about-values .text-body {
   color: var(--color-blue-800);
 }

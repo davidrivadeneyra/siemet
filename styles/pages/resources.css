@@ -105,6 +105,7 @@
   min-width: 0;
   flex-direction: column;
   gap: var(--space-5);
+  cursor: pointer;
 }
 
 .resource-card[hidden] {
@@ -116,6 +117,7 @@
   aspect-ratio: 453 / 329;
   object-fit: cover;
   transition: filter 450ms ease;
+  border-radius: 8px;
 }
 
 .resource-card__body {
@@ -144,7 +146,7 @@
 }
 
 .resource-card h2 {
-  color: var(--color-blue-800);
+  color: var(--color-blue-600);
   font-family: var(--font-sans);
   font-size: var(--font-size-title-medium);
   font-weight: var(--font-weight-medium);
@@ -155,7 +157,9 @@
 
 .resource-card__file {
   display: flex;
+  flex-direction: row-reverse;
   align-items: center;
+  justify-content: flex-end;
   gap: var(--space-2);
   width: fit-content;
   color: var(--color-blue-600);
@@ -164,10 +168,11 @@
   font-weight: 600;
   line-height: 1.1;
   text-transform: uppercase;
+  width: 100%;
 }
 
 .resource-card__file-label {
-  min-width: 3.75rem;
+  width: 100%;
 }
 
 .resource-card__pdf-icon {

@@ -40,6 +40,11 @@
   font-size: 1.0625rem;
 }
 
+.blog-index__intro .heading,
+.blog-index .blog-card__copy .heading {
+  color: var(--color-blue-600);
+}
+
 .blog-filters {
   display: flex;
   align-self: stretch;
@@ -330,6 +335,10 @@
 .article-share {
   padding: var(--space-6);
   background: var(--color-blue-50);
+}
+
+.article-share .heading {
+  color: var(--color-blue-600);
 }
 
 .article-share__links {

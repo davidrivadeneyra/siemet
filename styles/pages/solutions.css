@@ -53,10 +53,17 @@
   gap: var(--space-4);
 }
 
-.solution-card .heading,
+.solution-card .heading {
+  color: var(--color-blue-600);
+}
+
 .solution-card .text-body {
   width: 100%;
   color: var(--color-blue-800);
+}
+
+.solution-card .heading {
+  width: 100%;
 }
 
 .solution-card .text-body {

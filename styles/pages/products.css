@@ -21,7 +21,10 @@
   gap: var(--space-2);
 }
 
-.products-catalog__heading .heading,
+.products-catalog__heading .heading {
+  color: var(--color-blue-600);
+}
+
 .products-catalog__heading .text-body {
   color: var(--color-blue-800);
 }
@@ -159,7 +162,10 @@
   gap: var(--space-2);
 }
 
-.product-card .heading,
+.product-card .heading {
+  color: var(--color-blue-600);
+}
+
 .product-card .text-body {
   color: var(--color-blue-800);
 }

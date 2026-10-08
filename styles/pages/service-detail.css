@@ -58,7 +58,10 @@
   stroke-width: 2;
 }
 
-.service-overview .heading,
+.service-overview .heading {
+  color: var(--color-blue-600);
+}
+
 .service-overview .text-body {
   color: var(--color-blue-800);
 }
